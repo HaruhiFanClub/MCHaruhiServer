@@ -11,7 +11,7 @@
 	"name": "凉宫春日的世界 服务器客户端 四周目测试版本",
 	"version": "4.0.0-alpha.11",
 	"author": "凉宫春日MC部",
-	"mods": [
+	"files": [
 		{
 			"projectID": 239197,
 			"fileID": 3040575,
