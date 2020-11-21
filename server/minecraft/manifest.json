@@ -1,0 +1,23 @@
+{
+	"minecraft": {
+		"version": "1.12.2",
+		"modLoaders": [
+			{
+				"id": "forge-14.23.5.2854",
+				"primary": true
+			}
+		]
+	},
+	"name": "凉宫春日的世界 服务器客户端 四周目测试版本",
+	"version": "4.0.0-alpha.11",
+	"author": "凉宫春日MC部",
+	"mods": [
+		{
+			"projectID": 239197,
+			"fileID": 3040575,
+			"required": true,
+			"name": "CraftTweaker2-1.12-4.1.20.586.jar",
+			"hash": "a574364d537efe9a96047efb9b745f1818616b48"
+		}
+	]
+}
