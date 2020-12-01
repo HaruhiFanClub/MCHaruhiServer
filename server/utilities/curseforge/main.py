@@ -4,10 +4,7 @@ import logging
 import os
 import sys
 import threading
-import time
 import urllib
-from logging import debug
-from re import T
 
 import click
 import coloredlogs
@@ -121,9 +118,9 @@ class Manifest(object):
 @click.group(invoke_without_command=False)
 @click.option("--debug", is_flag=True, default=False, help="启用调试模式")
 @click.option("--config", "config_file", default="config.json", help="指定配置文件,默认为config.json")
-# @click.option("--manifest", "manifest_file", default="manifest.json", help="指定CurseForge配置文件,默认为manifest.json")
+@click.option("--manifest", "manifest_file", default="manifest.json", help="指定CurseForge配置文件,默认为manifest.json")
 # @click.option("--manifest", "manifest_file", default="../../minecraft/manifest.json")
-@click.option("--manifest", "manifest_file", default="manifest.test.json")
+# @click.option("--manifest", "manifest_file", default="manifest.test.json")
 def cli(debug, config_file, manifest_file):
     global DEBUG_MODE
     global CONFIG
