@@ -2,12 +2,14 @@ import hashlib
 import json
 import logging
 import os
+import re
 import sys
 import threading
 import urllib
 
 import click
 import coloredlogs
+import json5
 import requests
 import urllib3
 from prettytable import PrettyTable
@@ -18,13 +20,18 @@ MANIFEST_FILE = ""
 CONFIG = {}
 MANIFEST = {}
 
+comment_re = re.compile(
+    '(^)?[^\S\n]*/(?:\*(.*?)\*/[^\S\n]*|/[^\n]*)($)?',
+    re.DOTALL | re.MULTILINE
+)
+
 
 def readjson(config_file):
     try:
-        with open(config_file, "r", encoding="utf-8") as j:
-            return json.load(j)
-    except:
-        logging.error("无法读取文件, 文件不存在或有错误")
+        with open(config_file, "r", encoding="utf-8") as f:
+            return json5.load(f)
+    except Exception as e:
+        logging.error(f"无法读取文件, 文件不存在或有错误: {e}")
         exit(1)
 
 
