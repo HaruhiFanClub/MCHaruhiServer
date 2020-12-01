@@ -1,10 +1,12 @@
 import hashlib
 import json
 import logging
-from logging import debug
 import os
-from re import T
 import sys
+import threading
+import time
+from logging import debug
+from re import T
 
 import click
 import coloredlogs
@@ -112,14 +114,17 @@ def format(sortmods):
 
 
 @ cli.command(help="根据Manifest的信息下载Mod")
-@ click.option("--download-dir", "-D", "download", default="", help="下载文件的路径,默认为本程序所在文件夹")
-@ click.option("--no-check", "no_check", is_flag=True, default=False, help="")
-@ click.option("--overwrite", is_flag=True, default=False, help="")
+@ click.option("--download-dir", "-D", "download", default="", help="下载文件的路径, 默认为本程序所在文件夹")
+@ click.option("--no-check", "no_check", is_flag=True, default=False, help="禁用下载完成后Hash校验")
+@ click.option("--overwrite", is_flag=True, default=False, help="覆盖同名文件, 不添加此选项则默认跳过同名文件")
+@ click.option("--type", "_type", default=0, help="Mod类型, 0:忽略,1:仅服务端,2:仅客户端,3:双端")
 # @ click.option("--no-async", "no_async", is_flag=True, default=False, help="")
-@ click.option("--type", "_type", default=0, help="Mod类型,0:忽略,1:仅服务端,2:仅客户端,3:双端")
-def dlmod(download, no_check, overwrite, _type):
+@ click.option("--no-multithreading", "no_multithreading", is_flag=True, default=False, help="禁用多线程下载")
+def dlmod(download, no_check, overwrite, _type, no_multithreading):
     if no_check == True:
         logging.info("命令行参数指定不进行Hash校验")
+    if no_multithreading == True:
+        logging.info("命令行参数指定禁用多线程下载")
 
     if os.path.exists(download):
         dpath = os.path.abspath(download)
@@ -128,18 +133,18 @@ def dlmod(download, no_check, overwrite, _type):
         logging.warning("指定的路径不可用或未指定路径,自动选择默认路径")
 
     mod_list = Manifest(MANIFEST).mods()
-    logging.info(f"共找到 {len(mod_list)} 个Mod, 开始下载任务")
-    for index, item in enumerate(mod_list):
-        if _type != 0:
-            if "type" in item.keys():
-                if _type != item["type"]:
-                    continue
+    mod_count = len(mod_list)
+    logging.info(f"共找到 {mod_count} 个Mod, 开始下载任务")
+
+    def dl_thread(_count, _index, projectID, fileID, _savedir, _overwrite):
         try:
+            _index = _index+1
+
             urllib3.disable_warnings()
             headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36"}
 
             r = requests.get(
-                f"{CONFIG['curseforge']['apiurl']}{item['projectID']}/file/{item['fileID']}",
+                f"{CONFIG['curseforge']['apiurl']}{projectID}/file/{fileID}",
                 headers=headers, verify=False, proxies=CONFIG["proxy"], timeout=5
             )
             r.raise_for_status()
@@ -151,27 +156,50 @@ def dlmod(download, no_check, overwrite, _type):
             down_res.raise_for_status()
             md5 = down_res.headers.get("ETag").replace("\"", "")
 
-            file_path = f"{dpath}\{file_name}"
-            if os.path.exists(file_path):
-                logging.warning(f"[{index+1}/{len(mod_list)}] {file_name} 文件已存在 -> {('跳过') if overwrite == False else ('覆盖')}")
-                if overwrite == False:
-                    continue
-            with open(file_path, "wb") as f:
+            _file_path = f"{_savedir}\{file_name}"
+            if os.path.exists(_file_path):
+                logging.warning(f"[{_index}/{_count}] {file_name} 文件已存在 -> {('跳过') if _overwrite == False else ('覆盖')}")
+                if _overwrite == False:
+                    return
+            with open(_file_path, "wb") as f:
                 f.write(down_res.content)
-            logging.info(f"[{index+1}/{len(mod_list)}] {file_name} 下载完成")
+            logging.info(f"[{_index}/{_count}] {file_name} 下载完成")
+
+            if no_check == False:
+                with open(_file_path, "rb") as f:
+                    md5Obj = hashlib.md5()
+                    md5Obj.update(f.read())
+                    _cmd5 = md5Obj.hexdigest().upper().lower()
+                    logging.debug(_cmd5+" -> "+md5)
+                    if _cmd5 != md5:
+                        logging.error(f"[{_index}/{_count}] {file_name} 校验失败: {_cmd5} != {md5}")
         except Exception as e:
-            logging.error(f"[{index+1}/{len(mod_list)}] 错误: {e}")
+            logging.error(f"[{_index}/{_count}] 错误: {e}")
+            logging.debug(e)
+
+    thread_list = []
+    for index, item in enumerate(mod_list):
+        if _type != 0:
+            if "type" in item.keys():
+                if _type != item["type"]:
+                    continue
+        try:
+            if no_multithreading == False:
+                t = threading.Thread(target=dl_thread, args=(mod_count, index, item["projectID"], item["fileID"], dpath, overwrite))
+                thread_list.append(t)
+            else:
+                dl_thread(mod_count, index, item["projectID"], item["fileID"], dpath, overwrite)
+        except Exception as e:
+            logging.error(f"[{index+1}/{mod_count}] 错误: {e}")
             logging.debug(e)
             continue
 
-        if no_check == False:
-            with open(file_path, "rb") as f:
-                md5Obj = hashlib.md5()
-                md5Obj.update(f.read())
-                _cmd5 = md5Obj.hexdigest().upper().lower()
-                logging.debug(_cmd5+" -> "+md5)
-                if _cmd5 != md5:
-                    logging.error(f"[{index+1}/{len(mod_list)}] {file_name} 校验失败: {_cmd5} != {md5}")
+    if no_multithreading == False:
+        for t in thread_list:
+            t.setDaemon(True)
+            t.start()
+        for t in thread_list:
+            t.join()
 
 
 if __name__ == "__main__":
