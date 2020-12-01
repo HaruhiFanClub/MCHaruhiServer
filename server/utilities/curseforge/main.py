@@ -5,6 +5,7 @@ import os
 import sys
 import threading
 import time
+import urllib
 from logging import debug
 from re import T
 
@@ -30,6 +31,25 @@ def readjson(config_file):
         exit(1)
 
 
+def fsize(num: float = 0):
+    units = ["B", "KiB", "MiB", "GiB", "TiB"]
+    divisor = 1024
+
+    def _fs(_num, _level, _divisor):
+        if _level >= len(units)-1:
+            return _num, _level
+        elif _num >= _divisor:
+            _num /= _divisor
+            _level += 1
+            return _fs(_num, _level, _divisor)
+        else:
+            return _num, _level
+    num, level = _fs(num, 0, divisor)
+    if level > len(units):
+        level -= 1
+    return f"{round(num, 2)} {units[level]}"
+
+
 class Manifest(object):
     manifest = {}
 
@@ -38,6 +58,34 @@ class Manifest(object):
 
     def mods(self):
         return self.manifest["files"]
+
+    def extend(self):
+        _modlist = self.mods()
+        _count = len(_modlist)
+
+        for index, item in enumerate(_modlist):
+            print(f'\x1B[K [{index+1}/{_count}] 正在从CurseForge获取信息, 请稍后... \033[0m\r', end='')
+            try:
+                urllib3.disable_warnings()
+                headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36"}
+
+                r = requests.get(f"{CONFIG['curseforge']['apiurl']}{item['projectID']}", headers=headers, verify=False, proxies=CONFIG["proxy"], timeout=5)
+                r.raise_for_status()
+                res_text = json.loads(r.text)
+                self.manifest["files"][index]["projectName"] = res_text["name"]
+
+                r = requests.get(f"{CONFIG['curseforge']['apiurl']}{item['projectID']}/file/{item['fileID']}", headers=headers, verify=False, proxies=CONFIG["proxy"], timeout=5)
+                r.raise_for_status()
+                res_text = json.loads(r.text)
+                self.manifest["files"][index]["fileDate"] = res_text["fileDate"]
+                self.manifest["files"][index]["fileName"] = res_text["fileName"]
+                self.manifest["files"][index]["fileLength"] = res_text["fileLength"]
+
+                self.manifest["files"][index]["fileMD5"] = urllib.request.build_opener(urllib.request.ProxyHandler(CONFIG["proxy"])).open(res_text["downloadUrl"]).getheader(name="Etag").replace("\"", "")
+
+            except Exception as e:
+                logging.error(f"[{index+1}/{_count}] 错误: {e}")
+                logging.debug(e)
 
     def info_table(self):
         _data = self.manifest
@@ -54,13 +102,18 @@ class Manifest(object):
         for index, item in enumerate(_data["minecraft"]["modLoaders"]):
             mc_tb.add_row(["→", item["id"]])
         print(mc_tb)
-        mods_tb = PrettyTable(["序号", "项目ID", "文件ID", "类型", "文件名"])
+        mods_tb = PrettyTable(["序号",  "类型", "项目名称", "项目ID", "文件ID", "文件名", "文件大小", "发布日期", "MD5"])
         mods_tb.title = "模组列表"
         for index, item in enumerate(self.mods()):
             mods_tb.add_row([
-                index, item["projectID"], item["fileID"],
+                index,
                 (item["type"]) if "type" in item.keys() else "-",
-                (item["name"]) if "name" in item.keys() else "-",
+                (item["projectName"]) if "projectName" in item.keys() else "-",
+                item["projectID"], item["fileID"],
+                (item["fileName"]) if "fileName" in item.keys() else "-",
+                (fsize(item["fileLength"])) if "fileLength" in item.keys() else "-",
+                (item["fileDate"]) if "fileDate" in item.keys() else "-",
+                (item["fileMD5"]) if "fileMD5" in item.keys() else "-",
             ])
         print(mods_tb)
 
@@ -68,9 +121,9 @@ class Manifest(object):
 @click.group(invoke_without_command=False)
 @click.option("--debug", is_flag=True, default=False, help="启用调试模式")
 @click.option("--config", "config_file", default="config.json", help="指定配置文件,默认为config.json")
-@click.option("--manifest", "manifest_file", default="manifest.json", help="指定CurseForge配置文件,默认为manifest.json")
+# @click.option("--manifest", "manifest_file", default="manifest.json", help="指定CurseForge配置文件,默认为manifest.json")
 # @click.option("--manifest", "manifest_file", default="../../minecraft/manifest.json")
-# @click.option("--manifest", "manifest_file", default="manifest.test.json")
+@click.option("--manifest", "manifest_file", default="manifest.test.json")
 def cli(debug, config_file, manifest_file):
     global DEBUG_MODE
     global CONFIG
@@ -97,18 +150,26 @@ def cli(debug, config_file, manifest_file):
 
 @cli.command(help="从Manifest中获取信息")
 # @ click.option("--markdown", "gen_md", is_flag=True, default=False, help="")
-def info():
+@ click.option("--extend", is_flag=True, default=False, help="从CurseForge获取更多信息, 若获取到的CF的信息与Manifest文件中的冲突则以CF的信息为准")
+def info(extend):
     logging.debug(json.dumps(MANIFEST, ensure_ascii=False, indent=4))
     mObj = Manifest(MANIFEST)
+    if extend == True:
+        mObj.extend()
     mObj.info_table()
 
 
 @cli.command(help="格式化Manifest文件")
 @click.option("--sort-mods", "sortmods", is_flag=True, default=False, help="根据Mod的Project ID排序files列表")
-def format(sortmods):
+@ click.option("--extend-mod-info", "extendmod", is_flag=True, default=False, help="从CurseForge获取更多信息, 若获取到的CF的信息与Manifest文件中的冲突则以CF的信息为准")
+def format(sortmods, extendmod):
     mObj = Manifest(MANIFEST)
     if sortmods == True:
+        logging.info("根据Mod的Project ID排序files列表")
         mObj.manifest["files"] = sorted(mObj.mods(), key=lambda i: i["projectID"])
+    if extendmod == True:
+        logging.info("从CurseForge获取更多信息")
+        mObj.extend()
     with open(MANIFEST_FILE, "w") as f:
         json.dump(mObj.manifest, f, ensure_ascii=False)
 
