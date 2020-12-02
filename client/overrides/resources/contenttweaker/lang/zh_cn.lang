@@ -42,12 +42,6 @@ item.contenttweaker.death_teleporter.message.fail.1=§c无效的数据
 item.contenttweaker.death_teleporter.message.fail.2=§c此装置不属于你
 item.contenttweaker.death_teleporter.message.fail.3=§c无法进行跨纬度传送
 
-item.contenttweaker.death_teleporter.tooltips.1=§m低配版秽土转生
-item.contenttweaker.death_teleporter.tooltips.2=
-item.contenttweaker.death_teleporter.tooltips.3=
-item.contenttweaker.death_teleporter.tooltips.4=
-item.contenttweaker.death_teleporter.jei.description=
-
 item.contenttweaker.death_teleporter.lore.1=玩家名称: 
 item.contenttweaker.death_teleporter.lore.2=玩家UUID: 
 item.contenttweaker.death_teleporter.lore.3=死亡坐标: 

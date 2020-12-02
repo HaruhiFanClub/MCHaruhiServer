@@ -86,11 +86,11 @@ events.onPlayerAttackEntity(function(event as PlayerAttackEntityEvent){
 						"@a",
 						[
 							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.success.1\",\"color\":\"gray\"}",
-							"{\"text\":\""+player.name+"\",\"color\":\"gray\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\""+game.localize("item.contenttweaker.physics_excalibur.message.info.2") + "§7 "+player.name+"\n§rUUID:§7 "+player_uuid+"\n§r"+game.localize("item.contenttweaker.physics_excalibur.message.info.3")+"§7 X:"+player.posX+",Y:"+player.posY+",Z:"+player.posZ+",DIM:"+player.dimension+"\"}}",
+							"{\"text\":\""+player.name+"\",\"color\":\"gray\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Name:§7 "+player.name+"\n§rUUID:§7 "+player_uuid+"\n§rPos:§7 X:"+player.posX+",Y:"+player.posY+",Z:"+player.posZ+",DIM:"+player.dimension+"\"}}",
 							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.success.2\",\"color\":\"gray\"}",
 							"{\"translate\":\"item.contenttweaker.physics_excalibur.name\",\"color\":\"gray\",\"hoverEvent\":{\"action\":\"show_item\",\"value\":\"{\\\"id\\\":\\\"contenttweaker:physics_excalibur\\\",\\\"Count\\\":1}\"}}",
 							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.success.3\",\"color\":\"gray\"}",
-							"{\"text\":\""+target.definition.name+"\",\"color\":\"gray\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\""+game.localize("item.contenttweaker.physics_excalibur.message.info.2")+"§7 "+target.definition.name+"\n§r"+game.localize("item.contenttweaker.physics_excalibur.message.info.4")+"§7 "+target.displayName+"\n§r"+game.localize("item.contenttweaker.physics_excalibur.message.info.5")+"§7 "+target.customName+"\n§rID:§7 "+target.definition.id+"\n§rUUID:§7 "+target_uuid+"\n§r"+game.localize("item.contenttweaker.physics_excalibur.message.info.3")+"§7 X:"+target.posX+",Y:"+target.posY+",Z:"+target.posZ+",DIM:"+target.dimension+"\"}}",
+							"{\"text\":\""+target.definition.name+"\",\"color\":\"gray\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Name:§7 "+target.definition.name+"\n§rDisplay Name:§7 "+target.displayName+"\n§rCustom Name:§7 "+target.customName+"\n§rID:§7 "+target.definition.id+"\n§rUUID:§7 "+target_uuid+"\n§rPos: §7 X:"+target.posX+",Y:"+target.posY+",Z:"+target.posZ+",DIM:"+target.dimension+"\"}}",
 							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.success.4\",\"color\":\"gray\"}"
 						] as string[]
 					);
@@ -109,7 +109,7 @@ events.onPlayerAttackEntity(function(event as PlayerAttackEntityEvent){
 							"{\"text\":\" " + target.definition.id + "\"}",
 							"{\"text\":\"\n  \"}",
 							"{\"text\":\"UUID:\"}",
-							"{\"text\":\" " + target_uuid + "\",\"insertion\":\"" + target_uuid + "\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"" + game.localize("item.contenttweaker.physics_excalibur.message.hover.2") + "\"}}",
+							"{\"text\":\" " + target_uuid + "\",\"insertion\":\"" + target_uuid + "\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Shift-click to insert into chat input\"}}",
 							"{\"text\":\"\n  \"}",
 							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.2\"}",
 							"{\"text\":\" " + target.definition.name + "\"}",

@@ -1,7 +1,6 @@
 #priority 4
 
 #loader contenttweaker
-#ikwid
 
 import crafttweaker.data.IData;
 import crafttweaker.world.IWorld;
@@ -64,12 +63,11 @@ phyExcalibur.itemRightClick = function(item, world, player, hand) {
 			if ((tags has "mode") && (tags.mode == 1)) {
 				player.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand(), itemUtils.getItem("contenttweaker:physics_excalibur"));
 			} else {
-				player.sendChat(client.language);
 				player.setItemToSlot(
 					crafttweaker.entity.IEntityEquipmentSlot.mainHand(),
 					itemUtils.getItem("contenttweaker:physics_excalibur")
 						.withTag({ench: [{lvl: 0 as short, id: -1 as short}], mode: 1} as IData)
-						.withLore([game.localize("item.contenttweaker.physics_excalibur.lore.2")])
+						.withLore(["§7Actived"])
 				);
 			}
 			return "SUCCESS";
@@ -122,7 +120,6 @@ deathTeleporter.onItemUseFinish = function(item, world, player as IEntityLivingB
 						player.addPotionEffect(<potion:minecraft:resistance>.makePotionEffect(1200, 1));
 						player.addPotionEffect(<potion:minecraft:regeneration>.makePotionEffect(1200, 1));
 						player.addPotionEffect(<potion:minecraft:saturation>.makePotionEffect(1200, 0));
-						player.addPotionEffect(<potion:toughasnails:hydration>.makePotionEffect(1200, 0));
 					}
 					server.commandManager.executeCommand(
 						server,

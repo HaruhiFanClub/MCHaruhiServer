@@ -23,11 +23,11 @@ recipes.addShapeless(
 				}
 				return false;
 			})
-			.transformNew(function (item) {
-				return item
-					.updateTag(item.tag+{"transformed":1})
-					.withLore(["Used")]);
-			})
+			// .transformNew(function (item) {
+			// 	return item
+			// 		.updateTag(item.tag+{"transformed":1})
+			// 		.withLore(["Used"]);
+			// })
 			.marked("mark")
 	],
 	function(out,ins,cInfo){
@@ -63,7 +63,7 @@ recipes.addShaped(
 	],
 	function(out,ins,cInfo){
 		val data = ins.mark.tag;
-		return out.updateTag(data + {ench: [{lvl: 0 as short, id: -1 as short}], type: 1} as IData).withDisplayName("§b" + game.localize("item.contenttweaker.death_teleporter.name"));
+		return out.updateTag(data + {ench: [{lvl: 0 as short, id: -1 as short}], type: 1} as IData).withLore(["§7Update: Ender pearl"]);
 	},
 	null
 );
@@ -85,7 +85,7 @@ recipes.addShapeless(
 	],
 	function(out,ins,cInfo){
 		val data = ins.mark.tag;
-		return out.updateTag(data + {type: 2} as IData).withDisplayName("§e" + ins.mark.name);
+		return out.updateTag(data + {type: 2} as IData).withLore(["§7Update: Golden apple"]);
 	},
 	null
 );
