@@ -1,3 +1,5 @@
+#priority 4
+
 #loader contenttweaker
 #ikwid
 
@@ -62,6 +64,7 @@ phyExcalibur.itemRightClick = function(item, world, player, hand) {
 			if ((tags has "mode") && (tags.mode == 1)) {
 				player.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand(), itemUtils.getItem("contenttweaker:physics_excalibur"));
 			} else {
+				player.sendChat(client.language);
 				player.setItemToSlot(
 					crafttweaker.entity.IEntityEquipmentSlot.mainHand(),
 					itemUtils.getItem("contenttweaker:physics_excalibur")
@@ -79,17 +82,17 @@ phyExcalibur.register();
 
 //========================================
 
-val watertank_maxdamage = 40;
+// val watertank_maxdamage = 40;
 
-val EwaterTank = VanillaFactory.createItem("empty_drinking_water_tank");
-EwaterTank.setMaxStackSize(1);
-EwaterTank.register();
+// val EwaterTank = VanillaFactory.createItem("empty_drinking_water_tank");
+// EwaterTank.setMaxStackSize(1);
+// EwaterTank.register();
 
-val waterTank = VanillaFactory.createItem("drinking_water_tank");
-waterTank.setMaxStackSize(1);
-waterTank.setMaxDamage(watertank_maxdamage);
-waterTank.setItemUseAction("DRINK");
-waterTank.register();
+// val waterTank = VanillaFactory.createItem("drinking_water_tank");
+// waterTank.setMaxStackSize(1);
+// waterTank.setMaxDamage(watertank_maxdamage);
+// waterTank.setItemUseAction("DRINK");
+// waterTank.register();
 
 //========================================
 

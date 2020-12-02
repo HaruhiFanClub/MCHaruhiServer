@@ -28,14 +28,17 @@ import crafttweaker.command.ICommandManager;
 import crafttweaker.command.ICommand;
 import crafttweaker.command.ICommandSender;
 import mods.zenutils.UUID;
+import scripts.crt.functions.RunCmd;
+import scripts.crt.functions.BuildTellraw;
+import scripts.crt.functions.BuildServerChan;
 
 events.onPlayerLoggedIn(function(event as PlayerLoggedInEvent) {
 	if (!event.player.world.remote) {
 		var player = event.player;
 		var name = player.name;
-		scripts.crt.functions.RunCmd("scoreboard players add " + name + " loggedIn 1");
-		scripts.crt.functions.RunCmd(
-			"execute @a[name=" + name + ",score_loggedIn=1] ~ ~ ~ " + scripts.crt.functions.BuildServerChan(
+		RunCmd("scoreboard players add " + name + " loggedIn 1");
+		RunCmd(
+			"execute @a[name=" + name + ",score_loggedIn=1] ~ ~ ~ " + BuildServerChan(
 				"@a",
 				[
 					"{\"translate\":\"message.shw.login.newplayer.1\"}",
@@ -43,8 +46,8 @@ events.onPlayerLoggedIn(function(event as PlayerLoggedInEvent) {
 				] as string[]
 			)
 		);
-		scripts.crt.functions.RunCmd(
-			"execute @a[name=" + name + "] ~ ~ ~ " + scripts.crt.functions.BuildTellraw(
+		RunCmd(
+			"execute @a[name=" + name + "] ~ ~ ~ " + BuildTellraw(
 				name,
 				[
 					"{\"translate\":\"message.shw.login.player.1\",\"with\":[\"" + name + "\"]}",
@@ -52,8 +55,8 @@ events.onPlayerLoggedIn(function(event as PlayerLoggedInEvent) {
 				] as string[]
 			)
 		);
-		// scripts.crt.functions.RunCmd(
-		// 	"execute @a[name=" + name + "] ~ ~ ~ " + scripts.crt.functions.BuildTellraw(
+		// RunCmd(
+		// 	"execute @a[name=" + name + "] ~ ~ ~ " + BuildTellraw(
 		// 		name,
 		// 		[
 		// 			"{\"translate\":\"message.shw.login.player.2\"}",
@@ -79,7 +82,7 @@ events.onPlayerAttackEntity(function(event as PlayerAttackEntityEvent){
 					event.cancel();
 					target.setDead();
 					print("Player " + player.name + "(" + player_uuid + ") with NBT: " + player.getNBT().asString() + " removed entity " + target.definition.id + "(" + target_uuid + ") with NBT: " + target.getNBT().asString() +" by contenttweaker:physics_excalibur in dimension " + player.dimension);
-					val tellraw = scripts.crt.functions.BuildTellraw(
+					val tellraw = BuildTellraw(
 						"@a",
 						[
 							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.success.1\",\"color\":\"gray\"}",
@@ -91,13 +94,13 @@ events.onPlayerAttackEntity(function(event as PlayerAttackEntityEvent){
 							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.success.4\",\"color\":\"gray\"}"
 						] as string[]
 					);
-					scripts.crt.functions.RunCmd(tellraw);
+					RunCmd(tellraw);
 					player.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand(), <contenttweaker:physics_excalibur>);
 					return;
 				}
 				if (player.isSneaking) {
 					event.cancel();
-					val tellraw = scripts.crt.functions.BuildTellraw(
+					val tellraw = BuildTellraw(
 						player_uuid,
 						[
 							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.1\"}",
@@ -121,15 +124,17 @@ events.onPlayerAttackEntity(function(event as PlayerAttackEntityEvent){
 							"{\"text\":\" X:"+target.posX+",Y:"+target.posY+",Z:"+target.posZ+",DIM:"+target.dimension+"\"}",
 						] as string[]
 					);
-					scripts.crt.functions.RunCmd(tellraw);
+					RunCmd(tellraw);
 					return;
 				}
 				event.cancel();
-				player.sendChat(game.localize("item.contenttweaker.physics_excalibur.message.fail.2"));
+				// player.sendChat(game.localize("item.contenttweaker.physics_excalibur.message.fail.2"));
+				RunCmd(BuildTellraw(player.name,["{\"translate\":\"item.contenttweaker.physics_excalibur.message.fail.2\"}"]));
 
 			} else {
 				event.cancel();
-				player.sendChat(game.localize("item.contenttweaker.physics_excalibur.message.fail.1"));
+				// player.sendChat(game.localize("item.contenttweaker.physics_excalibur.message.fail.1"));
+				RunCmd(BuildTellraw(player.name,["{\"translate\":\"item.contenttweaker.physics_excalibur.message.fail.1\"}"]));
 			}
 		}
 	}

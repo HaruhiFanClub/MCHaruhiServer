@@ -5,11 +5,6 @@ message.shw.login.newplayer.1=欢迎新玩家
 message.shw.login.player.1=欢迎
 message.shw.login.player.2=§7总计登录次数:
 
-item.ic2.mining_laser.jei.description=不会吧不会吧，不会真有人以为服务器里给用这玩意吧？
-
-
-item.gravestone.death_info.tooltips.1=用于合成
-item.gravestone.death_info.lore.1=§7已使用,不可合成
 
 command.shw.hat.usage=/hat 将主手的物品与头部的物品交换,无参数
 command.shw.hat.error=§c头部物品带有绑定诅咒附魔

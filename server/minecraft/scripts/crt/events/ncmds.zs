@@ -7,27 +7,8 @@ import crafttweaker.data.IData;
 import crafttweaker.world.IWorld;
 import crafttweaker.player.IPlayer;
 import mods.zenutils.UUID;
-
-
-// events.onCommand(function(event as CommandEvent) {
-// 	val command = event.command;
-// 	if (isNull(command)) {return;}
-// 	if (event.commandSender instanceof IPlayer) {
-// 		val player as IPlayer = event.commandSender;
-// 		player.sendChat(command.name);
-// 		player.sendChat(event.parameters[0]);
-// 		if ((command.name == "ct") & (event.parameters[0] == "hat") ) {
-// 			val item_hand = player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand());
-// 			if (isNull(item_hand)) {return;}
-// 			val item_head = player.getItemInSlot(crafttweaker.entity.IEntityEquipmentSlot.head());
-// 			player.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.head(), item_hand);
-// 			if (!isNull(item_head)) {
-// 				player.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand(), item_head);
-// 			}
-// 		}
-// 	}
-// });
-
+import scripts.crt.functions.RunCmd;
+import scripts.crt.functions.BuildTellraw;
 
 val cmdHat as ZenCommand = ZenCommand.create("hat");
 cmdHat.getCommandUsage = function(sender) {
@@ -43,7 +24,8 @@ cmdHat.execute = function(command, server, sender, args) {
 		if ((!isNull(item_head)) && (item_head.tag has "ench") && !(player.creative)) {
 			for index,item in item_head.tag.ench.asList() {
 					if (item.id == 10 as short) {
-					player.sendChat(game.localize("command.shw.hat.error"));
+					// player.sendChat(game.localize("command.shw.hat.error"));
+					RunCmd(BuildTellraw(player.name,["{\"translate\":\"command.shw.hat.error\"}"]));
 					return;
 				}
 			}
@@ -72,15 +54,13 @@ myScoreCmd.execute = function(command, server, sender, args) {
 			"killCount" : "message.3"
 		} as string[string];
 		for obj, lang in scoreObjective {	
-			scripts.crt.functions.RunCmd(
-				scripts.crt.functions.BuildTellraw(
-					player,
-					[
-						"{\"translate\":\"command.shw.myscore." + lang +"\"}",
-						"{\"score\":{\"name\":\"*\",\"objective\":\"" + obj + "\"}}"
-					] as string[]
-				)
-			);
+			RunCmd(BuildTellraw(
+				player,
+				[
+					"{\"translate\":\"command.shw.myscore." + lang +"\"}",
+					"{\"score\":{\"name\":\"*\",\"objective\":\"" + obj + "\"}}"
+				] as string[]
+			));
 		}
 		return;
 	}
