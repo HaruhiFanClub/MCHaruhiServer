@@ -1,7 +1,7 @@
 {
 	"minecraft": { "version": "1.12.2", "modLoaders": [{ "id": "forge-14.23.5.2854", "primary": true }] },
 	"name": "凉宫春日的世界 服务器客户端 四周目测试版本",
-	"version": "4.0.0-alpha.18",
+	"version": "4.0.0-alpha.20",
 	"author": "凉宫春日MC部",
 	"files": [
 		{ "projectID": 32274, "fileID": 2916002, "required": true, "type": 3, "projectName": "JourneyMap", "fileDate": "2020-03-29T21:09:22.773Z", "fileName": "journeymap-1.12.2-5.7.1.jar", "fileLength": 6990968, "fileMD5": "8160b970fc14cff30dff2785bb9f964c" },
