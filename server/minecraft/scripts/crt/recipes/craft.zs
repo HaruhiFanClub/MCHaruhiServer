@@ -12,54 +12,54 @@ recipes.addShapeless(<contenttweaker:sextuple_compressed_netherstar_block>*9, [<
 recipes.addShapeless(<contenttweaker:septuple_compressed_netherstar_block>*9, [<contenttweaker:eightfold_compressed_netherstar_block>]);
 recipes.addShapeless(<contenttweaker:eightfold_compressed_netherstar_block>*9, [<contenttweaker:ninefold_compressed_netherstar_block>]);
 
-recipes.remove(<ic2:mining_laser>);
-recipes.addShaped(
-	<contenttweaker:crafting_mining_laser>,
-	[
-		[<ore:dustRedstone>, <ore:dustRedstone>, <ore:energyCrystal>],
-		[<ore:plateAdvancedAlloy>, <ore:plateAdvancedAlloy>, <ore:circuitAdvanced>],
-		[null, <ore:plateAdvancedAlloy>, <ore:plateAdvancedAlloy>]
-	]
-);
+// recipes.remove(<ic2:mining_laser>);
+// recipes.addShaped(
+// 	<contenttweaker:crafting_mining_laser>,
+// 	[
+// 		[<ore:dustRedstone>, <ore:dustRedstone>, <ore:energyCrystal>],
+// 		[<ore:plateAdvancedAlloy>, <ore:plateAdvancedAlloy>, <ore:circuitAdvanced>],
+// 		[null, <ore:plateAdvancedAlloy>, <ore:plateAdvancedAlloy>]
+// 	]
+// );
 
-recipes.remove(<ic2:te:52>);
-recipes.addShaped(
-	<ic2:te:52>, 
-	[
-		[<ic2:crafting:5>, <contenttweaker:crafting_mining_laser>, <ic2:crafting:5>],
-		[<ore:ingotIron>, <ore:machineBlockAdvanced>, <ore:ingotIron>],
-		[<ore:ingotIron>, <ic2:crafting:6>, <ore:ingotIron>]
-	]
-);
+// recipes.remove(<ic2:te:52>);
+// recipes.addShaped(
+// 	<ic2:te:52>, 
+// 	[
+// 		[<ic2:crafting:5>, <contenttweaker:crafting_mining_laser>, <ic2:crafting:5>],
+// 		[<ore:ingotIron>, <ore:machineBlockAdvanced>, <ore:ingotIron>],
+// 		[<ore:ingotIron>, <ic2:crafting:6>, <ore:ingotIron>]
+// 	]
+// );
 
-recipes.remove(<ic2:te:57>);
-recipes.addShaped(
-	<ic2:te:57>, 
-	[
-		[<ore:plateAdvancedAlloy>, <contenttweaker:crafting_mining_laser>, <ore:plateAdvancedAlloy>],
-		[<ic2:te:74>, <ore:machineBlockAdvanced>, <ic2:te:39>],
-		[<ore:plateAdvancedAlloy>, <ic2:te:60>, <ore:plateAdvancedAlloy>]
-	]
-);
+// recipes.remove(<ic2:te:57>);
+// recipes.addShaped(
+// 	<ic2:te:57>, 
+// 	[
+// 		[<ore:plateAdvancedAlloy>, <contenttweaker:crafting_mining_laser>, <ore:plateAdvancedAlloy>],
+// 		[<ic2:te:74>, <ore:machineBlockAdvanced>, <ic2:te:39>],
+// 		[<ore:plateAdvancedAlloy>, <ic2:te:60>, <ore:plateAdvancedAlloy>]
+// 	]
+// );
 
-recipes.remove(<ic2:te:62>);
-recipes.addShaped(
-	<ic2:te:62>,
-	[
-		[<ic2:resource:11>, <ic2:resource:11>, <ic2:resource:11>],
-		[<ic2:crystal_memory>, <ore:machineBlockAdvanced>, <ic2:crystal_memory>],
-		[<contenttweaker:crafting_mining_laser>, <ore:circuitAdvanced>, <contenttweaker:crafting_mining_laser>]
-	]
-);
+// recipes.remove(<ic2:te:62>);
+// recipes.addShaped(
+// 	<ic2:te:62>,
+// 	[
+// 		[<ic2:resource:11>, <ic2:resource:11>, <ic2:resource:11>],
+// 		[<ic2:crystal_memory>, <ore:machineBlockAdvanced>, <ic2:crystal_memory>],
+// 		[<contenttweaker:crafting_mining_laser>, <ore:circuitAdvanced>, <contenttweaker:crafting_mining_laser>]
+// 	]
+// );
 
-recipes.addShaped(
-	<contenttweaker:empty_drinking_water_tank>,
-	[
-		[<ore:plateTin>, <toughasnails:canteen>, <ore:plateTin>],
-		[<ore:plateTin>, <ic2:te:133>, <ore:plateTin>],
-		[<ore:plateTin>, <ore:blockGlass>, <ore:plateTin>]
-	]
-);
+// recipes.addShaped(
+// 	<contenttweaker:empty_drinking_water_tank>,
+// 	[
+// 		[<ore:plateTin>, <toughasnails:canteen>, <ore:plateTin>],
+// 		[<ore:plateTin>, <ic2:te:133>, <ore:plateTin>],
+// 		[<ore:plateTin>, <ore:blockGlass>, <ore:plateTin>]
+// 	]
+// );
 
 //<gravestone:death_info>a.withTag({info: {pos_y: 68, pos_z: 178, pos_x: -210, name: "WakelessSloth56", dim: 0, time: 1605368772924 as long, uuid: "2845a52b-eb23-4b52-9f81-f0f0b5755391", items: []}})
 
