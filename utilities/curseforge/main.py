@@ -11,6 +11,7 @@ import click
 import coloredlogs
 import json5
 import requests
+from requests import models
 import urllib3
 from prettytable import PrettyTable
 
@@ -63,33 +64,44 @@ class Manifest(object):
     def mods(self):
         return self.manifest["files"]
 
+    def _extend_thread(self, _count, _index, projectID, fileID):
+        try:
+            urllib3.disable_warnings()
+            headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36"}
+            r = requests.get(f"{CONFIG['curseforge']['apiurl']}{projectID}", headers=headers, verify=False, proxies=CONFIG["proxy"], timeout=5)
+            r.raise_for_status()
+            res_text = json.loads(r.text)
+            self.manifest["files"][_index]["projectName"] = res_text["name"]
+            r = requests.get(f"{CONFIG['curseforge']['apiurl']}{projectID}/file/{fileID}", headers=headers, verify=False, proxies=CONFIG["proxy"], timeout=5)
+            r.raise_for_status()
+            res_text = json.loads(r.text)
+            self.manifest["files"][_index]["fileDate"] = res_text["fileDate"]
+            self.manifest["files"][_index]["fileName"] = res_text["fileName"]
+            self.manifest["files"][_index]["fileLength"] = res_text["fileLength"]
+
+            self.manifest["files"][_index]["fileMD5"] = urllib.request.build_opener(urllib.request.ProxyHandler(CONFIG["proxy"])).open(urllib.parse.quote(res_text["downloadUrl"], safe='/:?=')).getheader(name="Etag").replace("\"", "")
+        except Exception as e:
+            logging.error(f"[{_index+1}/{_count}] 错误: {e}")
+            logging.debug(e)
+
     def extend(self):
         _modlist = self.mods()
         _count = len(_modlist)
-
+        thread_list = []
+        print(f'\x1B[K 正在从CurseForge获取信息, 请稍后... \033[0m\r', end='')
         for index, item in enumerate(_modlist):
-            print(f'\x1B[K [{index+1}/{_count}] 正在从CurseForge获取信息, 请稍后... \033[0m\r', end='')
             try:
-                urllib3.disable_warnings()
-                headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36"}
-
-                r = requests.get(f"{CONFIG['curseforge']['apiurl']}{item['projectID']}", headers=headers, verify=False, proxies=CONFIG["proxy"], timeout=5)
-                r.raise_for_status()
-                res_text = json.loads(r.text)
-                self.manifest["files"][index]["projectName"] = res_text["name"]
-
-                r = requests.get(f"{CONFIG['curseforge']['apiurl']}{item['projectID']}/file/{item['fileID']}", headers=headers, verify=False, proxies=CONFIG["proxy"], timeout=5)
-                r.raise_for_status()
-                res_text = json.loads(r.text)
-                self.manifest["files"][index]["fileDate"] = res_text["fileDate"]
-                self.manifest["files"][index]["fileName"] = res_text["fileName"]
-                self.manifest["files"][index]["fileLength"] = res_text["fileLength"]
-
-                self.manifest["files"][index]["fileMD5"] = urllib.request.build_opener(urllib.request.ProxyHandler(CONFIG["proxy"])).open(res_text["downloadUrl"]).getheader(name="Etag").replace("\"", "")
-
+                t = threading.Thread(target=self._extend_thread, args=(_count, index, item["projectID"], item["fileID"]))
+                thread_list.append(t)
             except Exception as e:
                 logging.error(f"[{index+1}/{_count}] 错误: {e}")
                 logging.debug(e)
+                continue
+        for t in thread_list:
+            t.setDaemon(True)
+            t.start()
+        for t in thread_list:
+            t.join()
 
     def info_table(self):
         _data = self.manifest
@@ -125,9 +137,9 @@ class Manifest(object):
 @click.group(invoke_without_command=False)
 @click.option("--debug", is_flag=True, default=False, help="启用调试模式")
 @click.option("--config", "config_file", default="config.json", help="指定配置文件,默认为config.json")
-@click.option("--manifest", "manifest_file", default="manifest.json", help="指定CurseForge配置文件,默认为manifest.json")
-# @click.option("--manifest", "manifest_file", default="../../minecraft/manifest.json")
-# @click.option("--manifest", "manifest_file", default="manifest.test.json")
+# @click.option("--manifest", "manifest_file", default="manifest.json", help="指定CurseForge配置文件,默认为manifest.json")
+# @click.option("--manifest", "manifest_file", default="../../server/minecraft/manifest.json")
+@click.option("--manifest", "manifest_file", default="manifest.test.json")
 def cli(debug, config_file, manifest_file):
     global DEBUG_MODE
     global CONFIG
@@ -165,12 +177,27 @@ def info(extend):
 
 @cli.command(help="格式化Manifest文件")
 @click.option("--sort-mods", "sortmods", is_flag=True, default=False, help="根据Mod的Project ID排序files列表")
+@ click.option("--standardize", "standardize", is_flag=True, default=False, help="删除额外信息, 将文件还原为CurseForge的标准格式. 覆盖其他选项的效果")
 @ click.option("--extend-mod-info", "extendmod", is_flag=True, default=False, help="从CurseForge获取更多信息, 若获取到的CF的信息与Manifest文件中的冲突则以CF的信息为准")
-def format(sortmods, extendmod):
+def format(sortmods, standardize, extendmod):
     mObj = Manifest(MANIFEST)
     if sortmods == True:
         logging.info("根据Mod的Project ID排序files列表")
         mObj.manifest["files"] = sorted(mObj.mods(), key=lambda i: i["projectID"])
+    if standardize == True:
+        logging.info("将文件还原为CurseForge的标准格式")
+        mods = mObj.mods()
+        for item in mods:
+            item.pop("type", 0)
+            item.pop("projectName", 0)
+            item.pop("fileDate", 0)
+            item.pop("fileName", 0)
+            item.pop("fileLength", 0)
+            item.pop("fileMD5", 0)
+        mObj.manifest["files"] = mods
+        with open(MANIFEST_FILE, "w") as f:
+            json.dump(mObj.manifest, f, ensure_ascii=False)
+        return
     if extendmod == True:
         logging.info("从CurseForge获取更多信息")
         mObj.extend()
@@ -182,7 +209,7 @@ def format(sortmods, extendmod):
 @ click.option("--download-dir", "-D", "download", default="", help="下载文件的路径, 默认为本程序所在文件夹")
 @ click.option("--no-check", "no_check", is_flag=True, default=False, help="禁用下载完成后Hash校验")
 @ click.option("--overwrite", is_flag=True, default=False, help="覆盖同名文件, 不添加此选项则默认跳过同名文件")
-@ click.option("--type", "_type", default=0, help="Mod类型, 0:忽略,1:仅服务端,2:仅客户端,3:双端")
+@ click.option("--type", "_type", default=0, help="Mod类型, 0:忽略,1:仅服务端,2:仅客户端,3:双端,4:1+3,5:2+3")
 # @ click.option("--no-async", "no_async", is_flag=True, default=False, help="")
 @ click.option("--no-multithreading", "no_multithreading", is_flag=True, default=False, help="禁用多线程下载")
 def dlmod(download, no_check, overwrite, _type, no_multithreading):
@@ -195,7 +222,15 @@ def dlmod(download, no_check, overwrite, _type, no_multithreading):
         dpath = os.path.abspath(download)
     else:
         dpath = os.path.abspath(os.path.dirname(sys.argv[0]))
-        logging.warning("指定的路径不可用或未指定路径,自动选择默认路径")
+        logging.warning("指定的路径不可用或未指定路径,自动选择默认路径. 是否继续? [y/n]")
+        c = click.getchar()
+        click.echo()
+        if c == 'y':
+            pass
+        elif c == 'n':
+            exit()
+        else:
+            exit()
 
     mod_list = Manifest(MANIFEST).mods()
     mod_count = len(mod_list)
@@ -203,8 +238,6 @@ def dlmod(download, no_check, overwrite, _type, no_multithreading):
 
     def dl_thread(_count, _index, projectID, fileID, _savedir, _overwrite):
         try:
-            _index = _index+1
-
             urllib3.disable_warnings()
             headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36"}
 
@@ -244,10 +277,22 @@ def dlmod(download, no_check, overwrite, _type, no_multithreading):
 
     thread_list = []
     for index, item in enumerate(mod_list):
+        index = index + 1
         if _type != 0:
             if "type" in item.keys():
-                if _type != item["type"]:
+                if _type == 4:
+                    if item["type"] == 2:
+                        logging.info(f"[{index}/{mod_count}] {item['projectID']}:{item['fileID']} 为仅客户端Mod -> 跳过")
+                        continue
+                elif _type == 5:
+                    if item["type"] == 1:
+                        logging.info(f"[{index}/{mod_count}] {item['projectID']}:{item['fileID']} 为仅服务端Mod -> 跳过")
+                        continue
+                elif _type != item["type"]:
+                    logging.info(f"[{index}/{mod_count}] {item['projectID']}:{item['fileID']} 与命令行指定的类型不符 -> 跳过")
                     continue
+                else:
+                    pass
         try:
             if no_multithreading == False:
                 t = threading.Thread(target=dl_thread, args=(mod_count, index, item["projectID"], item["fileID"], dpath, overwrite))
@@ -255,7 +300,7 @@ def dlmod(download, no_check, overwrite, _type, no_multithreading):
             else:
                 dl_thread(mod_count, index, item["projectID"], item["fileID"], dpath, overwrite)
         except Exception as e:
-            logging.error(f"[{index+1}/{mod_count}] 错误: {e}")
+            logging.error(f"[{index}/{mod_count}] 错误: {e}")
             logging.debug(e)
             continue
 

@@ -40,17 +40,17 @@ faeces.onItemFoodEaten = function(stack, world, player) {
 };
 faeces.register();
 
-val craftingMiningLaser = VanillaFactory.createItem("crafting_mining_laser");
-craftingMiningLaser.setCreativeTab(<creativetab:IC2>);
-craftingMiningLaser.setMaxStackSize(1);
-craftingMiningLaser.itemRightClick = function(stack, world, player, hand) {
-	if (!world.remote) {
-		player.sendChat(game.localize("item.contenttweaker.crafting_mining_laser.message"));
-		return "SUCCESS";
-	}
-	return "PASS";
-};
-craftingMiningLaser.register();
+// val craftingMiningLaser = VanillaFactory.createItem("crafting_mining_laser");
+// craftingMiningLaser.setCreativeTab(<creativetab:IC2>);
+// craftingMiningLaser.setMaxStackSize(1);
+// craftingMiningLaser.itemRightClick = function(stack, world, player, hand) {
+// 	if (!world.remote) {
+// 		player.sendChat(game.localize("item.contenttweaker.crafting_mining_laser.message"));
+// 		return "SUCCESS";
+// 	}
+// 	return "PASS";
+// };
+// craftingMiningLaser.register();
 
 val phyExcalibur = VanillaFactory.createItem("physics_excalibur");
 phyExcalibur.setMaxStackSize(1);
