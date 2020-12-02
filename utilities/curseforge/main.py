@@ -2,7 +2,6 @@ import hashlib
 import json
 import logging
 import os
-import re
 import sys
 import threading
 import urllib
@@ -11,7 +10,6 @@ import click
 import coloredlogs
 import json5
 import requests
-from requests import models
 import urllib3
 from prettytable import PrettyTable
 
@@ -20,11 +18,6 @@ CONFIG_FILE = ""
 MANIFEST_FILE = ""
 CONFIG = {}
 MANIFEST = {}
-
-comment_re = re.compile(
-    '(^)?[^\S\n]*/(?:\*(.*?)\*/[^\S\n]*|/[^\n]*)($)?',
-    re.DOTALL | re.MULTILINE
-)
 
 
 def readjson(config_file):
@@ -137,9 +130,9 @@ class Manifest(object):
 @click.group(invoke_without_command=False)
 @click.option("--debug", is_flag=True, default=False, help="启用调试模式")
 @click.option("--config", "config_file", default="config.json", help="指定配置文件,默认为config.json")
-# @click.option("--manifest", "manifest_file", default="manifest.json", help="指定CurseForge配置文件,默认为manifest.json")
+@click.option("--manifest", "manifest_file", default="manifest.json", help="指定CurseForge配置文件,默认为manifest.json")
 # @click.option("--manifest", "manifest_file", default="../../server/minecraft/manifest.json")
-@click.option("--manifest", "manifest_file", default="manifest.test.json")
+# @click.option("--manifest", "manifest_file", default="manifest.test.json")
 def cli(debug, config_file, manifest_file):
     global DEBUG_MODE
     global CONFIG
