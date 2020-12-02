@@ -1,6 +1,7 @@
 *.code-workspace
 .vscode/*
 
+*.bak
 *.jar
 *.test.*
 

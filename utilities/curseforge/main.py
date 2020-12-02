@@ -1,8 +1,10 @@
+from genericpath import exists
 import hashlib
 import json
 import logging
 import os
 import sys
+from sys import path
 import threading
 import urllib
 
@@ -170,16 +172,30 @@ def info(extend):
 
 @cli.command(help="格式化Manifest文件")
 @click.option("--sort-mods", "sortmods", is_flag=True, default=False, help="根据Mod的Project ID排序files列表")
-@ click.option("--standardize", "standardize", is_flag=True, default=False, help="删除额外信息, 将文件还原为CurseForge的标准格式. 覆盖其他选项的效果")
+@ click.option("--standardize", "standardize", is_flag=True, default=False, help="将文件还原为CurseForge的标准格式. 若未指定输出文件, 程序会自动创建备份文件. 覆盖其他选项的效果")
 @ click.option("--extend-mod-info", "extendmod", is_flag=True, default=False, help="从CurseForge获取更多信息, 若获取到的CF的信息与Manifest文件中的冲突则以CF的信息为准")
-def format(sortmods, standardize, extendmod):
+@ click.option("--out", "-o", "_out", default="", help="输出文件, 若不指定则覆盖原文件")
+def format(sortmods, standardize, extendmod, _out):
+    if _out == "":
+        out = MANIFEST_FILE
+    else:
+        out = _out
+        logging.info(f"输出结果到 {os.path.abspath(out)}")
     mObj = Manifest(MANIFEST)
     if sortmods == True:
         logging.info("根据Mod的Project ID排序files列表")
         mObj.manifest["files"] = sorted(mObj.mods(), key=lambda i: i["projectID"])
     if standardize == True:
         logging.info("将文件还原为CurseForge的标准格式")
+        if _out == "":
+            with open(out+".bak", "w") as f:
+                logging.info(f"创建备份文件 {os.path.abspath(out+'.bak')}")
+                json.dump(mObj.manifest, f, ensure_ascii=False)
         mods = mObj.mods()
+        for item in mods[:]:
+            if "type" in item.keys():
+                if item["type"] == 1:
+                    mods.remove(item)
         for item in mods:
             item.pop("type", 0)
             item.pop("projectName", 0)
@@ -188,13 +204,13 @@ def format(sortmods, standardize, extendmod):
             item.pop("fileLength", 0)
             item.pop("fileMD5", 0)
         mObj.manifest["files"] = mods
-        with open(MANIFEST_FILE, "w") as f:
+        with open(out, "w") as f:
             json.dump(mObj.manifest, f, ensure_ascii=False)
         return
     if extendmod == True:
         logging.info("从CurseForge获取更多信息")
         mObj.extend()
-    with open(MANIFEST_FILE, "w") as f:
+    with open(out, "w") as f:
         json.dump(mObj.manifest, f, ensure_ascii=False)
 
 
