@@ -59,6 +59,7 @@
 -   [ ] 下载: 断点续传
 -   [x] 格式化: 根据 Project ID 排序 files 列表
 -   [x] 格式化: 扩展信息
+-   [x] 格式化: 将 manifest.json 还原为 CurseForge 的标准格式(即移除自定义的信息)
 
 #### 备份工具
 
