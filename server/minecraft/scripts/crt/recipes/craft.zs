@@ -46,7 +46,7 @@ recipes.addShaped(
 	"ench_tditp_1",
 	<contenttweaker:death_teleporter>,
 	[
-		[<ore:enderpearl>,<ore:enderpearl>,<ore:enderpearl>],
+		[null, <ore:enderpearl>, null],
 		[
 			<ore:enderpearl>,
 			<contenttweaker:death_teleporter>
@@ -59,11 +59,11 @@ recipes.addShaped(
 				.marked("mark"),
 			<ore:enderpearl>
 		],
-		[<ore:enderpearl>,<ore:enderpearl>,<ore:enderpearl>],
+		[null, <ore:enderpearl>, null],
 	],
 	function(out,ins,cInfo){
 		val data = ins.mark.tag;
-		return out.updateTag(data + {ench: [{lvl: 0 as short, id: -1 as short}], type: 1} as IData).withLore(["§7Update: Ender pearl"]);
+		return out.updateTag(data + {ench: [{lvl: 0 as short, id: -1 as short}], type: 1} as IData).withLore(["§7Upgrade: Ender pearl"]);
 	},
 	null
 );
@@ -76,6 +76,27 @@ recipes.addShapeless(
 		<minecraft:golden_apple>,
 		<contenttweaker:death_teleporter>
 			.only(function (item) {
+				if (!(item.tag has "ench") && (item.tag has "type") && (item.tag.type == 0)) {
+					return true;
+				}
+				return false;
+			})
+			.marked("mark"),
+	],
+	function(out,ins,cInfo){
+		val data = ins.mark.tag;
+		return out.updateTag(data + {ench: [{lvl: 0 as short, id: -1 as short}], type: 3} as IData).withLore(["§7Upgrade: Golden apple x2"]);
+	},
+	null
+);
+
+recipes.addShapeless(
+	"ench_tditp_3",
+	<contenttweaker:death_teleporter>,
+	[
+		<minecraft:golden_apple>,
+		<contenttweaker:death_teleporter>
+			.only(function (item) {
 				if ((item.tag has "ench") && (item.tag has "type") && (item.tag.type == 1)) {
 					return true;
 				}
@@ -85,7 +106,7 @@ recipes.addShapeless(
 	],
 	function(out,ins,cInfo){
 		val data = ins.mark.tag;
-		return out.updateTag(data + {type: 2} as IData).withLore(["§7Update: Golden apple"]);
+		return out.updateTag(data + {type: 2} as IData).withLore(["§7Upgrade: Golden apple"]);
 	},
 	null
 );

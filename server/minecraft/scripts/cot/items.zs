@@ -114,12 +114,14 @@ deathTeleporter.onItemUseFinish = function(item, world, player as IEntityLivingB
 					val pos_z = tags.pos_z;
 					player.addPotionEffect(<potion:minecraft:invisibility>.makePotionEffect(300, 4));
 					if (!(tags has "ench") && (tags.type == 0)) {
-						player.addPotionEffect(<potion:minecraft:weakness>.makePotionEffect(24000, 4));
+						player.addPotionEffect(<potion:minecraft:weakness>.makePotionEffect(12000, 4));
 						player.addPotionEffect(<potion:minecraft:unluck>.makePotionEffect(24000, 4));
 						player.addPotionEffect(<potion:minecraft:poison>.makePotionEffect(6000, 4));
 						player.addPotionEffect(<potion:minecraft:blindness>.makePotionEffect(1200, 4));
 						player.addPotionEffect(<potion:minecraft:slowness>.makePotionEffect(1200, 4));
-					} else if (tags.type == 2) {
+					} else if (tags.type == 1) {
+
+					} else if (tags.type >= 2) {
 						player.addPotionEffect(<potion:minecraft:resistance>.makePotionEffect(1200, 1));
 						player.addPotionEffect(<potion:minecraft:regeneration>.makePotionEffect(1200, 1));
 						player.addPotionEffect(<potion:minecraft:saturation>.makePotionEffect(1200, 0));
