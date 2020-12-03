@@ -1,7 +1,7 @@
 {
 	"minecraft": { "version": "1.12.2", "modLoaders": [{ "id": "forge-14.23.5.2854", "primary": true }] },
 	"name": "凉宫春日的世界 服务器客户端 四周目测试版本",
-	"version": "4.0.0-alpha.20",
+	"version": "4.0.0-alpha.26",
 	"author": "凉宫春日MC部",
 	"files": [
 		{ "projectID": 32274, "fileID": 2916002, "required": true, "type": 3, "projectName": "JourneyMap", "fileDate": "2020-03-29T21:09:22.773Z", "fileName": "journeymap-1.12.2-5.7.1.jar", "fileLength": 6990968, "fileMD5": "8160b970fc14cff30dff2785bb9f964c" },
@@ -54,6 +54,7 @@
 		{ "projectID": 285612, "fileID": 3125141, "required": true, "type": 3, "projectName": "RandomPatches", "fileDate": "2020-11-28T09:27:24.267Z", "fileName": "randompatches-1.12.2-1.22.1.9.jar", "fileLength": 293230, "fileMD5": "c26fcb7f69e2217f71bb148e5e219700" },
 		{ "projectID": 286924, "fileID": 2591071, "required": true, "type": 2, "projectName": "CustomSkinLoader", "fileDate": "2018-07-25T13:27:24.027Z", "fileName": "CustomSkinLoader_Forge-14.9.jar", "fileLength": 99181, "fileMD5": "2e35b55b4a023d5441251212709b2469" },
 		{ "projectID": 288885, "fileID": 2838777, "required": true, "type": 3, "projectName": "FastWorkbench", "fileDate": "2019-12-09T00:14:14.563Z", "fileName": "FastWorkbench-1.12.2-1.7.3.jar", "fileLength": 26515, "fileMD5": "b55a31e4193204572acf05f78e0deedc" },
+		{ "projectID": 289412, "fileID": 3077814, "required": true, "type": 3, "projectName": "FTB Quests", "fileDate": "2020-10-12T18:14:59.97Z", "fileName": "FTBQuests-1202.9.0.13.jar", "fileLength": 1084170, "fileMD5": "dcea504f368603e31eca296e248aec0b" },
 		{ "projectID": 291737, "fileID": 2920441, "required": true, "type": 3, "projectName": "Thermal Innovation", "fileDate": "2020-04-03T23:54:47.553Z", "fileName": "ThermalInnovation-1.12.2-0.3.6.1-universal.jar", "fileLength": 182379, "fileMD5": "320accf690ccc1c8a23679beb63fb615" },
 		{ "projectID": 297404, "fileID": 3043459, "required": true, "type": 2, "projectName": "I18nUpdateMod", "fileDate": "2020-08-27T13:20:28.27Z", "fileName": "i18nupdatemod-1.12.2-1.1.0.jar", "fileLength": 21088, "fileMD5": "0eb201759f1bf3f3f46b6fb83797d81c" },
 		{ "projectID": 299540, "fileID": 2706111, "required": true, "type": 3, "projectName": "FastFurnace", "fileDate": "2019-05-01T21:29:47.233Z", "fileName": "FastFurnace-1.12.2-1.3.1.jar", "fileLength": 10035, "fileMD5": "b84cc8a587dbd35fef2dbc3e0b9435aa" },
@@ -62,8 +63,10 @@
 		{ "projectID": 306770, "fileID": 3087124, "required": true, "type": 3, "projectName": "Patchouli", "fileDate": "2020-10-20T02:25:34.58Z", "fileName": "Patchouli-1.0-22.jar", "fileLength": 469651, "fileMD5": "b8f1c0064be68f765ccfc2d63f6acd4d" },
 		{ "projectID": 307152, "fileID": 3010381, "required": true, "type": 3, "projectName": "Champions", "fileDate": "2020-07-21T04:40:22.04Z", "fileName": "champions-1.12.2-1.0.11.9.jar", "fileLength": 231524, "fileMD5": "90e7f1b7e8844b4669e3a61a244dfaae" },
 		{ "projectID": 309344, "fileID": 3127982, "required": true, "type": 3, "projectName": "Dynamic Stealth", "fileDate": "2020-12-01T19:00:57.717Z", "fileName": "DynamicStealth-1.12.2.113.jar", "fileLength": 931112, "fileMD5": "ec5d981c43538551f96dd38abe78439a" },
+		{ "projectID": 309674, "fileID": 3003364, "required": true, "type": 3, "projectName": "Item Filters", "fileDate": "2020-07-12T22:57:19.817Z", "fileName": "ItemFilters-1.0.4.2.jar", "fileLength": 78935, "fileMD5": "c89d595cdef3cc93f2acbc31333e418b" },
 		{ "projectID": 315773, "fileID": 3127974, "required": true, "type": 3, "projectName": "Fantastic Lib", "fileDate": "2020-12-01T18:50:37.663Z", "fileName": "FantasticLib-1.12.2.043.jar", "fileLength": 520614, "fileMD5": "f27653c148bff959fc3429894e0566d5" },
 		{ "projectID": 318283, "fileID": 3101003, "required": true, "type": 3, "projectName": "Far From Home", "fileDate": "2020-11-03T14:42:38.12Z", "fileName": "Far_From_Home-1.12.2-6.0.jar", "fileLength": 28563416, "fileMD5": "7219bac84c2016f62c636130cbfefd5e" },
+		{ "projectID": 355044, "fileID": 3050064, "required": true, "type": 3, "projectName": "Touhou Little Maid", "fileDate": "2020-09-05T08:11:42.993Z", "fileName": "touhoulittlemaid-1.12.2-1.2.3-release.jar", "fileLength": 8140042, "fileMD5": "7c785b0636fc8c0bfb9f05c52263709e" },
 		{ "projectID": 401178, "fileID": 3112169, "required": true, "type": 3, "projectName": "Zen Utils", "fileDate": "2020-11-15T10:25:39.24Z", "fileName": "zenutils-1.4.0.jar", "fileLength": 60341, "fileMD5": "60ce7fe34926f5b44e525155575418a4" }
 	]
 }
