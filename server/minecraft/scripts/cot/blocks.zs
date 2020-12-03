@@ -32,12 +32,5 @@ for index,item in cot_netherstar_stack {
 	item.setCreativeTab(<creativetab:buildingBlocks>);
 	item.setWitherProof(true);
 	item.setMobilityFlag(mods.contenttweaker.PushReaction.block());
-	// if ((index >= 2) && (index < 6)) {
-	// 	item.rarity = "UNCOMMON";
-	// } else if ((index >= 6) && (index < 9)) {
-	// 	item.rarity = "RARE";
-	// } else if (index >= 9) {
-	// 	item.rarity = "EPIC";
-	// }
 	item.register();
 }

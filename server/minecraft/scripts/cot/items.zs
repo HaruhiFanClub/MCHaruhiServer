@@ -28,6 +28,9 @@ import mods.contenttweaker.IItemUpdate;
 import mods.contenttweaker.MutableItemStack;
 import mods.zenutils.UUID;
 
+val testItem = VanillaFactory.createItem("test_item");
+testItem.register();
+
 val faeces as ItemFood = VanillaFactory.createItemFood("faeces", 4);
 faeces.saturation = 0.8;
 faeces.alwaysEdible = true;

@@ -5,20 +5,14 @@ import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.events.IEventManager;
 import crafttweaker.entity.IEntityEquipmentSlot;
 import crafttweaker.event.EntityLivingUseItemEvent.All;
-import crafttweaker.event.EnderTeleportEvent;
-import crafttweaker.event.BlockBreakEvent;
 import crafttweaker.event.EntityLivingFallEvent;
 import crafttweaker.event.EntityLivingDeathDropsEvent;
 import crafttweaker.event.PlayerTickEvent;
 import crafttweaker.event.PlayerChangedDimensionEvent;
-import crafttweaker.event.PlayerRightClickItemEvent;
-import crafttweaker.event.PlayerBreakSpeedEvent;
 import crafttweaker.event.PlayerLoggedInEvent;
 import crafttweaker.event.PlayerAttackEntityEvent;
 import crafttweaker.event.IEventCancelable;
-import crafttweaker.event.ItemExpireEvent;
 import crafttweaker.server.IServer;
-import crafttweaker.potions.IPotionEffect;
 import crafttweaker.game.IGame;
 import crafttweaker.data.IData;
 import crafttweaker.item.IIngredient;
@@ -55,15 +49,6 @@ events.onPlayerLoggedIn(function(event as PlayerLoggedInEvent) {
 				] as string[]
 			)
 		);
-		// RunCmd(
-		// 	"execute @a[name=" + name + "] ~ ~ ~ " + BuildTellraw(
-		// 		name,
-		// 		[
-		// 			"{\"translate\":\"message.shw.login.player.2\"}",
-		// 			"{\"score\":{\"name\":\"" + name + "\",\"objective\":\"loggedIn\"},\"color\":\"gray\"}"
-		// 		] as string[]
-		// 	)
-		// );
 	}
 });
 
@@ -128,12 +113,10 @@ events.onPlayerAttackEntity(function(event as PlayerAttackEntityEvent){
 					return;
 				}
 				event.cancel();
-				// player.sendChat(game.localize("item.contenttweaker.physics_excalibur.message.fail.2"));
 				RunCmd(BuildTellraw(player.name,["{\"translate\":\"item.contenttweaker.physics_excalibur.message.fail.2\"}"]));
 
 			} else {
 				event.cancel();
-				// player.sendChat(game.localize("item.contenttweaker.physics_excalibur.message.fail.1"));
 				RunCmd(BuildTellraw(player.name,["{\"translate\":\"item.contenttweaker.physics_excalibur.message.fail.1\"}"]));
 			}
 		}

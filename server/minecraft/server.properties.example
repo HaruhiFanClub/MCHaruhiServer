@@ -1,5 +1,5 @@
 #Minecraft server properties
-spawn-protection=16
+spawn-protection=0
 max-tick-time=-1
 generator-settings=
 force-gamemode=false

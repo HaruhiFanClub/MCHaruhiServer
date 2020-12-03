@@ -41,6 +41,7 @@ item.contenttweaker.death_teleporter.name=泥土转生装置
 item.contenttweaker.death_teleporter.message.fail.1=§c无效的数据
 item.contenttweaker.death_teleporter.message.fail.2=§c此装置不属于你
 item.contenttweaker.death_teleporter.message.fail.3=§c无法进行跨纬度传送
+item.contenttweaker.death_teleporter.jei.description=泥土转生装置
 
 item.contenttweaker.death_teleporter.lore.1=玩家名称: 
 item.contenttweaker.death_teleporter.lore.2=玩家UUID: 
