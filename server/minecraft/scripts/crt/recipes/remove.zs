@@ -22,7 +22,8 @@ val removeItemArray = [
 	<cfm:mirror>,
 	<cfm:modern_tv>,
 	<cfm:washing_machine>,
-	<thermalexpansion:florb:*>
+	<thermalexpansion:florb:*>,
+	<xreliquary:alkahestry_tome:*>
 ] as IIngredient[];
 for item in removeItemArray{
 	recipes.remove(item);
