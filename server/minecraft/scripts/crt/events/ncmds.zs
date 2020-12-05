@@ -7,8 +7,8 @@ import crafttweaker.data.IData;
 import crafttweaker.world.IWorld;
 import crafttweaker.player.IPlayer;
 import mods.zenutils.UUID;
-import scripts.crt.functions.RunCmd;
-import scripts.crt.functions.BuildTellraw;
+import scripts.utils.common.RunCmd;
+import scripts.utils.command.vanilla.BuildTellraw;
 
 val cmdHat as ZenCommand = ZenCommand.create("hat");
 cmdHat.getCommandUsage = function(sender) {

@@ -22,9 +22,9 @@ import crafttweaker.command.ICommandManager;
 import crafttweaker.command.ICommand;
 import crafttweaker.command.ICommandSender;
 import mods.zenutils.UUID;
-import scripts.crt.functions.RunCmd;
-import scripts.crt.functions.BuildTellraw;
-import scripts.crt.functions.BuildServerChan;
+import scripts.utils.common.RunCmd;
+import scripts.utils.command.vanilla.BuildTellraw;
+import scripts.utils.command.extend.BuildServerChan;
 
 events.onPlayerLoggedIn(function(event as PlayerLoggedInEvent) {
 	if (!event.player.world.remote) {
