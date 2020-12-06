@@ -67,3 +67,21 @@ myScoreCmd.execute = function(command, server, sender, args) {
 	CommandUtils.notifyWrongUsage(command, sender);
 };
 myScoreCmd.register();
+
+val cmdSuicide as ZenCommand = ZenCommand.create("suicide");
+cmdSuicide.getCommandUsage = function(sender) {
+	return "command.shw.suicide.usage";
+};
+cmdSuicide.requiredPermissionLevel = 0;
+cmdSuicide.tabCompletionGetters = [];
+cmdSuicide.execute = function(command, server, sender, args) {
+	if (args.length == 0) {
+		val player = CommandUtils.getCommandSenderAsPlayer(sender);
+		val uuid = player.getUUID().asString();
+		RunCmd("kill " + uuid);
+		print("Player " + player.name +"("+uuid+") committed suicide");
+		return;
+	}
+	CommandUtils.notifyWrongUsage(command, sender);
+};
+cmdSuicide.register();

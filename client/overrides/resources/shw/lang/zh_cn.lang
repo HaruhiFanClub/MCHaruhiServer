@@ -13,3 +13,5 @@ command.shw.myscore.usage=/myscore 查询自己的记分板值,无参数
 command.shw.myscore.message.1=总计登录数: 
 command.shw.myscore.message.2=总计死亡数: 
 command.shw.myscore.message.3=总计击杀数: 
+
+command.shw.suicide.usage=/suicide 自杀
