@@ -17,6 +17,8 @@
 !/server/minecraft/config/cfm.cfg
 !/server/minecraft/config/sasit.cfg
 !/server/minecraft/config/TouhouLittleMaid.cfg
+!/server/minecraft/config/tconstruct.cfg
+!/server/minecraft/config/Waystones.cfg
 
 !/server/minecraft/config/cofh/
 /server/minecraft/config/cofh/core/client.cfg
