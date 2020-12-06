@@ -28,6 +28,14 @@ import mods.contenttweaker.IItemUpdate;
 import mods.contenttweaker.MutableItemStack;
 import mods.zenutils.UUID;
 
+function GTellraw (target as string, raw_json_text as string[]) {
+	var c = "";
+	for item in raw_json_text {
+		c += ("," + item);
+	}
+	server.commandManager.executeCommand(server,"tellraw "+ target + " [\"\"" + c + "]");
+}
+
 val testItem = VanillaFactory.createItem("test_item");
 testItem.register();
 
@@ -43,18 +51,6 @@ faeces.onItemFoodEaten = function(stack, world, player) {
 	}
 };
 faeces.register();
-
-// val craftingMiningLaser = VanillaFactory.createItem("crafting_mining_laser");
-// craftingMiningLaser.setCreativeTab(<creativetab:IC2>);
-// craftingMiningLaser.setMaxStackSize(1);
-// craftingMiningLaser.itemRightClick = function(stack, world, player, hand) {
-// 	if (!world.remote) {
-// 		player.sendChat(game.localize("item.contenttweaker.crafting_mining_laser.message"));
-// 		return "SUCCESS";
-// 	}
-// 	return "PASS";
-// };
-// craftingMiningLaser.register();
 
 val phyExcalibur = VanillaFactory.createItem("physics_excalibur");
 phyExcalibur.setMaxStackSize(1);
@@ -80,22 +76,6 @@ phyExcalibur.itemRightClick = function(item, world, player, hand) {
 	return "PASS";
 };
 phyExcalibur.register();
-
-//========================================
-
-// val watertank_maxdamage = 40;
-
-// val EwaterTank = VanillaFactory.createItem("empty_drinking_water_tank");
-// EwaterTank.setMaxStackSize(1);
-// EwaterTank.register();
-
-// val waterTank = VanillaFactory.createItem("drinking_water_tank");
-// waterTank.setMaxStackSize(1);
-// waterTank.setMaxDamage(watertank_maxdamage);
-// waterTank.setItemUseAction("DRINK");
-// waterTank.register();
-
-//========================================
 
 val deathTeleporter = VanillaFactory.createItemFood("death_teleporter", 0);
 deathTeleporter.setMaxStackSize(1);
@@ -134,17 +114,17 @@ deathTeleporter.onItemUseFinish = function(item, world, player as IEntityLivingB
 				return null;
 			}
 			if (!world.remote) {
-				scripts.cot.functions.GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.death_teleporter.message.fail.3\"}"] as string[]);
+				GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.death_teleporter.message.fail.3\"}"] as string[]);
 			}
 			return item;
 		}
 		if (!world.remote) {
-			scripts.cot.functions.GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.death_teleporter.message.fail.2\"}"] as string[]);
+			GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.death_teleporter.message.fail.2\"}"] as string[]);
 		}
 		return item;
 	}
 	if (!world.remote) {
-		scripts.cot.functions.GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.death_teleporter.message.fail.1\"}"] as string[]);
+		GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.death_teleporter.message.fail.1\"}"] as string[]);
 	}
 	return item;
 };

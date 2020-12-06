@@ -1,5 +1,3 @@
-#priority 2
-
 import crafttweaker.item.IItemStack;
 import crafttweaker.game.IGame;
 import mods.jei.JEI.addDescription;
