@@ -21,27 +21,32 @@ import scripts.utils.command.extend.BuildServerChan;
 
 events.onPlayerLoggedIn(function(event as PlayerLoggedInEvent) {
 	if (!event.player.world.remote) {
-		var player = event.player;
-		var name = player.name;
-		RunCmd("scoreboard players add " + name + " loggedIn 1");
-		RunCmd(
-			"execute @a[name=" + name + ",score_loggedIn=1] ~ ~ ~ " + BuildServerChan(
-				"@a",
-				[
-					"{\"translate\":\"message.shw.login.newplayer.1\"}",
-					"{\"selector\": \"@a[name=" + name + "]\"}"
-				] as string[]
-			)
-		);
-		RunCmd(
-			"execute @a[name=" + name + "] ~ ~ ~ " + BuildTellraw(
+		val player = event.player;
+		val name = player.name;
+		
+		val data = {PlayerPersisted:{loggedIn:0}} as IData + player.data;
+		val logged_in = data.PlayerPersisted.loggedIn.asInt();
+
+		if (logged_in != 0) {
+			RunCmd(BuildTellraw(
 				name,
 				[
 					"{\"translate\":\"message.shw.login.player.1\",\"with\":[\"" + name + "\"]}",
 					"{\"selector\": \"@a[name=" + name + "]\"}"
 				] as string[]
-			)
-		);
+			));
+		} else {
+			RunCmd(BuildServerChan(
+				"@a",
+				[
+					"{\"translate\":\"message.shw.login.newplayer.1\"}",
+					"{\"selector\": \"@a[name=" + name + "]\"}"
+				] as string[]
+			));
+		}
+
+		RunCmd("scoreboard players set " + name + " loggedIn " + (logged_in+1));
+		player.update({PlayerPersisted:{loggedIn:logged_in+1}} as IData);
 	}
 });
 
