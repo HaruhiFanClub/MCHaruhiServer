@@ -1,10 +1,13 @@
 import crafttweaker.player.IPlayer;
 import crafttweaker.entity.IEntity;
+import crafttweaker.entity.IEntityItem;
 import crafttweaker.entity.IEntityLiving;
 import crafttweaker.entity.IEntityLivingBase;
-import crafttweaker.events.IEventManager;
 import crafttweaker.entity.IEntityEquipmentSlot;
-import crafttweaker.event.EntityLivingUseItemEvent.All;
+import crafttweaker.damage.IDamageSource;
+import crafttweaker.events.IEventManager;
+import crafttweaker.event.ILivingEvent;
+import crafttweaker.event.EntityLivingDeathDropsEvent;
 import crafttweaker.event.PlayerLoggedInEvent;
 import crafttweaker.event.PlayerAttackEntityEvent;
 import crafttweaker.event.IEventCancelable;
@@ -15,6 +18,7 @@ import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IItemCondition;
 import mods.zenutils.UUID;
+import mods.ctutils.utils.Math;
 import scripts.utils.common.RunCmd;
 import scripts.utils.command.vanilla.BuildTellraw;
 import scripts.utils.command.extend.BuildServerChan;
@@ -87,24 +91,12 @@ events.onPlayerAttackEntity(function(event as PlayerAttackEntityEvent){
 						player_uuid,
 						[
 							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.1\"}",
-							"{\"text\":\"\n  \"}",
-							"{\"text\":\"ID:\"}",
-							"{\"text\":\" " + target.definition.id + "\"}",
-							"{\"text\":\"\n  \"}",
-							"{\"text\":\"UUID:\"}",
-							"{\"text\":\" " + target_uuid + "\",\"insertion\":\"" + target_uuid + "\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Shift-click to insert into chat input\"}}",
-							"{\"text\":\"\n  \"}",
-							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.2\"}",
-							"{\"text\":\" " + target.definition.name + "\"}",
-							"{\"text\":\"\n  \"}",
-							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.4\"}",
-							"{\"text\":\" " + target.displayName + "\"}",
-							"{\"text\":\"\n  \"}",
-							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.5\"}",
-							"{\"text\":\" " + target.customName + "\"}",
-							"{\"text\":\"\n  \"}",
-							"{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.3\"}",
-							"{\"text\":\" X:"+target.posX+",Y:"+target.posY+",Z:"+target.posZ+",DIM:"+target.dimension+"\"}",
+							"{\"text\":\"\n  \"}","{\"text\":\"ID:\"}","{\"text\":\" " + target.definition.id + "\"}",
+							"{\"text\":\"\n  \"}","{\"text\":\"UUID:\"}","{\"text\":\" " + target_uuid + "\",\"insertion\":\"" + target_uuid + "\",\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Shift-click to insert into chat input\"}}",
+							"{\"text\":\"\n  \"}","{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.2\"}","{\"text\":\" " + target.definition.name + "\"}",
+							"{\"text\":\"\n  \"}","{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.4\"}","{\"text\":\" " + target.displayName + "\"}",
+							"{\"text\":\"\n  \"}","{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.5\"}","{\"text\":\" " + target.customName + "\"}",
+							"{\"text\":\"\n  \"}","{\"translate\":\"item.contenttweaker.physics_excalibur.message.info.3\"}","{\"text\":\" X:"+target.posX+",Y:"+target.posY+",Z:"+target.posZ+",DIM:"+target.dimension+"\"}",
 						] as string[]
 					);
 					RunCmd(tellraw);
@@ -117,6 +109,15 @@ events.onPlayerAttackEntity(function(event as PlayerAttackEntityEvent){
 				event.cancel();
 				RunCmd(BuildTellraw(player.name,["{\"translate\":\"item.contenttweaker.physics_excalibur.message.fail.1\"}"]));
 			}
+		}
+	}
+});
+
+
+events.onEntityLivingDeathDrops(function(event as EntityLivingDeathDropsEvent){
+	if ((!event.entityLivingBase.world.remote) && (event.damageSource.getDamageType() == "anvil") && (!isNull(event.entityLivingBase.definition))) {
+		if (Math.random() > 0.95){
+			event.addItem(<contenttweaker:nijigen_crystal>.createEntityItem(event.entityLivingBase.world, event.entityLivingBase.position));
 		}
 	}
 });

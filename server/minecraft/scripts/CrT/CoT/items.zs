@@ -129,3 +129,6 @@ deathTeleporter.onItemUseFinish = function(item, world, player as IEntityLivingB
 	return item;
 };
 deathTeleporter.register();
+
+val NijigenCrystal = VanillaFactory.createItem("nijigen_crystal");
+NijigenCrystal.register();

@@ -3,6 +3,7 @@ import crafttweaker.game.IGame;
 import mods.jei.JEI.addDescription;
 
 addDescription(<contenttweaker:death_teleporter>, game.localize("item.contenttweaker.death_teleporter.jei.description"));
+addDescription(<contenttweaker:nijigen_crystal>, game.localize("item.contenttweaker.nijigen_crystal.jei.description"));
 
 val netherstar_blocks = [<contenttweaker:netherstar_block>,
 	<contenttweaker:compressed_netherstar_block>,
