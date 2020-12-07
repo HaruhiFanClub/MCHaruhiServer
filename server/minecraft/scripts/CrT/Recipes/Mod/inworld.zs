@@ -1,7 +1,10 @@
 import crafttweaker.data.IData;
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IIngredient;
+import mods.inworldcrafting.FluidToFluid;
 import mods.inworldcrafting.FluidToItem;
+
+FluidToFluid.transform(<liquid:holy_water>, <liquid:blood>, [<ebwizardry:master_healing_wand>], true);
 
 val arms = [
 	<minecraft:iron_sword>,
