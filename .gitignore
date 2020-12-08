@@ -34,4 +34,6 @@ server/minecraft/config/cofh/thermalfoundation
 server/minecraft/config/cofh/thermalinnovation
 server/minecraft/config/cofh/world
 
+!/server/minecraft/config/ebwizardry/
+
 server/minecraft/local/ftbutilities/players.txt
