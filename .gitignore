@@ -13,6 +13,7 @@
 # !/server/minecraft/config/worldedit
 # /server/minecraft/config/worldedit/sessions
 !/server/minecraft/config/gravestone.cfg
+!/server/minecraft/config/epicsiegemod.cfg
 !/server/minecraft/config/journeymap_server.cfg
 !/server/minecraft/config/ftblib.cfg
 !/server/minecraft/config/ftbutilities.cfg
