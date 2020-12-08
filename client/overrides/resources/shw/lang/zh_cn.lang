@@ -15,3 +15,7 @@ command.shw.myscore.message.2=总计死亡数:
 command.shw.myscore.message.3=总计击杀数: 
 
 command.shw.suicide.usage=/suicide 自杀
+
+command.shw.login_count.usage=/login_count <get|set> <playername>
+command.shw.login_count.message.1=玩家 %s 的登录次数为 %s
+command.shw.login_count.message.2=将玩家 %s 的登录次数从 %s 设置为 %s
