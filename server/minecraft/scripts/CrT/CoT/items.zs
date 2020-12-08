@@ -83,7 +83,7 @@ deathTeleporter.setSaturation(0);
 deathTeleporter.setAlwaysEdible(true);
 deathTeleporter.setItemUseAction("BOW");
 deathTeleporter.onItemUseFinish = function(item, world, player as IEntityLivingBase) {
-	val player_uuid = player.getUUID().asString();
+	val player_uuid = player.getUUID();
 	val tags = item.tag;
 	if ((tags has "type") && (tags has "pos_x") && (tags has "pos_y") && (tags has "pos_z") && (tags has "dim") && (tags has "uuid")) {
 		if (player_uuid == tags.uuid) {

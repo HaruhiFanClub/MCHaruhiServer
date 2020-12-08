@@ -1,12 +1,13 @@
-import mods.zenutils.command.ZenCommand;
-import mods.zenutils.command.CommandUtils;
-import mods.zenutils.command.IGetTabCompletion;
 import crafttweaker.entity.IEntity;
 import crafttweaker.entity.IEntityEquipmentSlot;
 import crafttweaker.data.IData;
 import crafttweaker.world.IWorld;
 import crafttweaker.player.IPlayer;
 import mods.zenutils.UUID;
+import mods.zenutils.StringList;
+import mods.zenutils.command.ZenCommand;
+import mods.zenutils.command.CommandUtils;
+import mods.zenutils.command.IGetTabCompletion;
 import scripts.utils.common.RunCmd;
 import scripts.utils.command.vanilla.BuildTellraw;
 
@@ -45,7 +46,7 @@ myScoreCmd.getCommandUsage = function(sender) {
 myScoreCmd.requiredPermissionLevel = 0;
 myScoreCmd.tabCompletionGetters = [];
 myScoreCmd.execute = function(command, server, sender, args) {
-	val player = CommandUtils.getCommandSenderAsPlayer(sender).getUUID().asString();
+	val player = CommandUtils.getCommandSenderAsPlayer(sender).getUUID();
 	if (args.length == 0) {
 		val scoreObjective = {
 			"loggedIn" : "message.1",
@@ -70,7 +71,7 @@ cmdSuicide.tabCompletionGetters = [];
 cmdSuicide.execute = function(command, server, sender, args) {
 	if (args.length == 0) {
 		val player = CommandUtils.getCommandSenderAsPlayer(sender);
-		val uuid = player.getUUID().asString();
+		val uuid = player.getUUID();
 		RunCmd("kill " + uuid);
 		print("Player " + player.name +"("+uuid+") committed suicide");
 		return;

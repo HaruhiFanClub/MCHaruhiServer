@@ -59,8 +59,8 @@ events.onPlayerAttackEntity(function(event as PlayerAttackEntityEvent){
 		if (isNull(item)) {return;}
 		if (item.definition.id == "contenttweaker:physics_excalibur" ) {
 			if (player.creative) {
-				val target_uuid = target.getUUID().asString();
-				val player_uuid = player.getUUID().asString();
+				val target_uuid = target.getUUID();
+				val player_uuid = player.getUUID();
 				if ((item.tag has "mode") && (item.tag.mode == 1)) {
 					event.cancel();
 					target.setDead();
