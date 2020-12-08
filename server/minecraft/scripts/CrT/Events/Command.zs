@@ -24,7 +24,6 @@ cmdHat.execute = function(command, server, sender, args) {
 		if ((!isNull(item_head)) && (item_head.tag has "ench") && !(player.creative)) {
 			for index,item in item_head.tag.ench.asList() {
 					if (item.id == 10 as short) {
-					// player.sendChat(game.localize("command.shw.hat.error"));
 					RunCmd(BuildTellraw(player.name,["{\"translate\":\"command.shw.hat.error\"}"]));
 					return;
 				}
@@ -54,13 +53,7 @@ myScoreCmd.execute = function(command, server, sender, args) {
 			"killCount" : "message.3"
 		} as string[string];
 		for obj, lang in scoreObjective {	
-			RunCmd(BuildTellraw(
-				player,
-				[
-					"{\"translate\":\"command.shw.myscore." + lang +"\"}",
-					"{\"score\":{\"name\":\"*\",\"objective\":\"" + obj + "\"}}"
-				] as string[]
-			));
+			RunCmd(BuildTellraw(player, ["{\"translate\":\"command.shw.myscore." + lang +"\"}", "{\"score\":{\"name\":\"*\",\"objective\":\"" + obj + "\"}}"] as string[]));
 		}
 		return;
 	}

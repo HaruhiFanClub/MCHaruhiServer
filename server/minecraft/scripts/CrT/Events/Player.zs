@@ -4,21 +4,17 @@ import crafttweaker.entity.IEntityItem;
 import crafttweaker.entity.IEntityLiving;
 import crafttweaker.entity.IEntityLivingBase;
 import crafttweaker.entity.IEntityEquipmentSlot;
-import crafttweaker.damage.IDamageSource;
 import crafttweaker.events.IEventManager;
 import crafttweaker.event.ILivingEvent;
-import crafttweaker.event.EntityLivingDeathDropsEvent;
 import crafttweaker.event.PlayerLoggedInEvent;
 import crafttweaker.event.PlayerAttackEntityEvent;
 import crafttweaker.event.IEventCancelable;
 import crafttweaker.server.IServer;
 import crafttweaker.game.IGame;
 import crafttweaker.data.IData;
-import crafttweaker.item.IIngredient;
 import crafttweaker.item.IItemStack;
 import crafttweaker.item.IItemCondition;
 import mods.zenutils.UUID;
-import mods.ctutils.utils.Math;
 import scripts.utils.common.RunCmd;
 import scripts.utils.command.vanilla.BuildTellraw;
 import scripts.utils.command.extend.BuildServerChan;
@@ -109,15 +105,6 @@ events.onPlayerAttackEntity(function(event as PlayerAttackEntityEvent){
 				event.cancel();
 				RunCmd(BuildTellraw(player.name,["{\"translate\":\"item.contenttweaker.physics_excalibur.message.fail.1\"}"]));
 			}
-		}
-	}
-});
-
-
-events.onEntityLivingDeathDrops(function(event as EntityLivingDeathDropsEvent){
-	if ((!event.entityLivingBase.world.remote) && (event.damageSource.getDamageType() == "anvil") && (!isNull(event.entityLivingBase.definition))) {
-		if (Math.random() > 0.95){
-			event.addItem(<contenttweaker:nijigen_crystal>.createEntityItem(event.entityLivingBase.world, event.entityLivingBase.position));
 		}
 	}
 });
