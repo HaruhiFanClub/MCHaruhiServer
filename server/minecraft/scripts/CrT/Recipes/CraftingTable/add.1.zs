@@ -1,6 +1,7 @@
 // =================================================================//
 //                       vanilla modification                       //
 // =================================================================//
+#priority 18
 
 import crafttweaker.data.IData;
 import crafttweaker.game.IGame;

@@ -1,3 +1,5 @@
+#priority 19
+
 import crafttweaker.item.IIngredient;
 
 val removeItemArray = [
@@ -30,3 +32,5 @@ for item in removeItemArray{
 }
 
 recipes.removeByMod("chiselsandbits");
+
+recipes.remove(<ebwizardry:blank_scroll>);

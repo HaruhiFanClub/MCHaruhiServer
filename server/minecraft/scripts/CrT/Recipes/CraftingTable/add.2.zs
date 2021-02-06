@@ -1,3 +1,5 @@
+#priority 17
+
 import crafttweaker.data.IData;
 import crafttweaker.game.IGame;
 import crafttweaker.item.IIngredient;
