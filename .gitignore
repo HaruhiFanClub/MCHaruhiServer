@@ -22,6 +22,15 @@
 !/server/minecraft/config/TouhouLittleMaid.cfg
 !/server/minecraft/config/tconstruct.cfg
 !/server/minecraft/config/Waystones.cfg
+!/server/minecraft/config/autm.cfg
+!/server/minecraft/config/backstab.cfg
+!/server/minecraft/config/champions.cfg
+!/server/minecraft/config/consecration.cfg
+!/server/minecraft/config/epicsiegemod.cfg
+!/server/minecraft/config/roughtweaks.cfg
+!/server/minecraft/config/splash.cfg
+!/server/minecraft/config/WizardryFates.cfg
+!/server/minecraft/config/xreliquary.cfg
 
 !/server/minecraft/config/cofh/
 /server/minecraft/config/cofh/core/client.cfg
@@ -36,5 +45,10 @@ server/minecraft/config/cofh/world
 
 !/server/minecraft/config/ebwizardry/
 /server/minecraft/config/ebwizardry/ebwizardry.cfg
+
+!/server/minecraft/config/antiqueatlas/
+/server/minecraft/config/antiqueatlas/*.json
+
+!/server/minecraft/config/champions/
 
 server/minecraft/local/ftbutilities/players.txt
