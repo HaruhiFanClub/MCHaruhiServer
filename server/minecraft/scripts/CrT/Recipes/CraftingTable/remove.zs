@@ -33,4 +33,6 @@ for item in removeItemArray{
 
 recipes.removeByMod("chiselsandbits");
 
+recipes.remove(<xreliquary:interdiction_torch>);
+
 recipes.remove(<ebwizardry:blank_scroll>);
