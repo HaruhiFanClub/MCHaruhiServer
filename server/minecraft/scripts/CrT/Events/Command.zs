@@ -122,3 +122,46 @@ cmdSuicide.execute = function(command, server, sender, args) {
 	CommandUtils.notifyWrongUsage(command, sender);
 };
 cmdSuicide.register();
+
+val cmdGift as ZenCommand = ZenCommand.create("gift");
+cmdGift.getCommandUsage = function(sender) {
+	return "command.shw.gift.usage";
+};
+cmdGift.requiredPermissionLevel = 4;
+cmdGift.tabCompletionGetters = [];
+cmdGift.execute = function(command, server, sender, args) {
+	val player = CommandUtils.getCommandSenderAsPlayer(sender);
+	if ((args.length >= 1) && (args[0] == "pack")) {
+		val player_date=player.nbt;
+		val inv = player_date.Inventory as IData;
+		if (inv.length == 0) {
+			RunCmd(BuildTellraw(player.name,["{\"translate\":\"command.shw.gift.pack.error\"}"]));
+			return;
+		}
+		var ex_data = {} as IData;
+		for str in args {
+			var str_array = str.split(":");
+			if (str_array[0] == "unlimited") {
+				if (str_array[1] == 1) {
+					ex_data = ex_data + {Unlimited: 1, display: {Lore: ["§r§6Unlimited"]}};
+				}
+				continue;
+			}
+			if (str_array[0] == "name") {
+				ex_data = ex_data + {display: {Name: ("§r§d"+str_array[1])}};
+				continue;
+			}
+			if (str_array[0] == "lore") {
+				ex_data = ex_data + {display: {Lore: [("§r"+str_array[1])]}};
+				continue;
+			}
+		}
+		player.give(<contenttweaker:gift>.withTag(({Items:inv} as IData) + ex_data));
+		print("Player " + player.name +"("+player.getUUID()+") created a gift pack (by using /gift command) with this items and tags:");
+		print("    " + inv.asString());
+		print("    " + ex_data.asString());
+		return;
+	}
+	CommandUtils.notifyWrongUsage(command, sender);
+};
+cmdGift.register();
