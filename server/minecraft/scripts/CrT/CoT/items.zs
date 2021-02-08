@@ -132,3 +132,45 @@ deathTeleporter.register();
 
 val NijigenCrystal = VanillaFactory.createItem("nijigen_crystal");
 NijigenCrystal.register();
+
+val giftItem = VanillaFactory.createItem("gift");
+giftItem.setMaxStackSize(1);
+giftItem.rarity = "epic";
+giftItem.itemRightClick = function(item, world, player, hand) {
+	if (!world.remote && player.isSneaking) {
+		if (item.matches(player.getHeldItem(Hand.main()))) {
+			val player_uuid = player.getUUID();
+			val gift_tags = item.tag;
+			if (gift_tags has "Items") {
+				val items = gift_tags.Items as IData;
+				if (items.length == 0) {
+					GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.gift.message.fail.2\"}"] as string[]);
+					return "PASS";
+				}
+				if (items.length > 36) {
+					GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.gift.message.fail.3\"}"] as string[]);
+					return "PASS";
+				}
+				for index in 0 .. items.length {
+					var item = items[index];
+					if (item has "tag") {
+						player.give(((itemUtils.getItem(item.id,item.Damage))*item.Count).withTag(item.tag as IData));
+					} else {
+						player.give(((itemUtils.getItem(item.id,item.Damage))*item.Count));
+					}
+				}
+				if ((gift_tags has "Unlimited") && (gift_tags.Unlimited == 1)) {} else {
+					player.setItemToSlot(crafttweaker.entity.IEntityEquipmentSlot.mainHand(), null);
+				}
+				print("Player " + player.name +"("+player_uuid+") opened a gift pack (by itemRightClick) with NBT:");
+				print("    " + gift_tags.asString());
+				return "SUCCESS";
+			}
+			GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.gift.message.fail.1\"}"] as string[]);
+			return "PASS";
+		}
+		return "PASS";
+	}
+	return "PASS";
+};
+giftItem.register();
