@@ -25,14 +25,11 @@ val removeItemArray = [
 	<cfm:modern_tv>,
 	<cfm:washing_machine>,
 	<thermalexpansion:florb:*>,
-	<xreliquary:alkahestry_tome:*>
+	<xreliquary:interdiction_torch>,
+	<ebwizardry:blank_scroll>
 ] as IIngredient[];
 for item in removeItemArray{
 	recipes.remove(item);
 }
 
 recipes.removeByMod("chiselsandbits");
-
-recipes.remove(<xreliquary:interdiction_torch>);
-
-recipes.remove(<ebwizardry:blank_scroll>);
