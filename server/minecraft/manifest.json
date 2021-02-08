@@ -75,7 +75,7 @@
 		{ "projectID": 355044, "fileID": 3050064, "required": true, "type": 3, "projectName": "Touhou Little Maid", "fileDate": "2020-09-05T08:11:42.993Z", "fileName": "touhoulittlemaid-1.12.2-1.2.3-release.jar", "fileLength": 8140042, "fileMD5": "7c785b0636fc8c0bfb9f05c52263709e" },
 		{ "projectID": 368887, "fileID": 2908141, "required": true, "type": 3, "projectName": "Seed for wizardry", "fileDate": "2020-03-21T17:23:29.37Z", "fileName": "SeedsForWizardry+1.0+For+MC+Forge+1.12.2.jar", "fileLength": 24735, "fileMD5": "eb6e57a9ff92200648f51c27c4cdc84a" },
 		{ "projectID": 389665, "fileID": 3067998, "required": true, "type": 3, "projectName": "YUNG's Better Mineshafts (Forge)", "fileDate": "2020-09-28T23:42:18.253Z", "fileName": "BetterMineshaftsForge-1.12.2-2.1.1.jar", "fileLength": 305014, "fileMD5": "5c0f1472967e53652d552c5dd51d1d72" },
-		{ "projectID": 401178, "fileID": 3139384, "required": true, "type": 3, "projectName": "Zen Utils", "fileDate": "2020-12-15T13:41:23.7Z", "fileName": "zenutils-1.4.7.jar", "fileLength": 67673, "fileMD5": "401d9e628e4e052e395590c9e9a86805" },
+		{ "projectID": 401178, "fileID": 3189629, "required": true, "type": 3, "projectName": "Zen Utils", "fileDate": "2021-02-02T03:55:45.037Z", "fileName": "zenutils-1.6.4.jar", "fileLength": 97732, "fileMD5": "373a7b92c8f504c355a5dcf4198c0616" },
 		{ "projectID": 417871, "fileID": 3120045, "required": true, "type": 3, "projectName": "Wizardry - Fates", "fileDate": "2020-11-22T20:22:32.79Z", "fileName": "WizardryFates-1.0.2.jar", "fileLength": 134167, "fileMD5": "0be16c90f1acfc687907388746f42bf2" }
 	]
 }
