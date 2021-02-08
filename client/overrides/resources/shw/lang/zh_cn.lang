@@ -19,3 +19,6 @@ command.shw.suicide.usage=/suicide 自杀
 command.shw.login_count.usage=/login_count <get|set> <playername>
 command.shw.login_count.message.1=玩家 %s 的登录次数为 %s
 command.shw.login_count.message.2=将玩家 %s 的登录次数从 %s 设置为 %s
+
+command.shw.gift.usage=参见/gift help
+command.shw.gift.pack.error=§c打包内容为空
