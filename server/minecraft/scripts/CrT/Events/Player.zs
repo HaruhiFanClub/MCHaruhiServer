@@ -23,6 +23,7 @@ events.onPlayerLoggedIn(function(event as PlayerLoggedInEvent) {
 	if (!event.player.world.remote) {
 		val player = event.player;
 		val name = player.name;
+		val uuid = player.getUUID();
 		
 		val data = {PlayerPersisted:{loggedIn:0}} as IData + player.data;
 		val logged_in = data.PlayerPersisted.loggedIn.asInt();
@@ -43,6 +44,28 @@ events.onPlayerLoggedIn(function(event as PlayerLoggedInEvent) {
 					"{\"selector\": \"@a[name=" + name + "]\"}"
 				] as string[]
 			));
+			player.give(
+				<contenttweaker:gift>.withTag({
+					display: {
+						Lore: ["§r属于" + name],
+						Name: "§r§6初始物品包"
+					},
+					to: uuid,
+					Items: [
+						{Slot: 0 as byte, id: "waystones:return_scroll", Count: 8 as byte, Damage: 0 as short},
+						{Slot: 1 as byte, id: "minecraft:flint_and_steel", Count: 1 as byte, Damage: 0 as short},
+						{Slot: 1 as byte, id: "roughtweaks:bandage", Count: 1 as byte, Damage: 0 as short},
+						{Slot: 2 as byte, id: "thermalfoundation:tool.sword_silver", Count: 1 as byte, Damage: 0 as short},
+						{Slot: 3 as byte, id: "ebwizardry:scroll", Count: 1 as byte, Damage: 38 as short},
+						{Slot: 4 as byte, id: "ebwizardry:scroll", Count: 1 as byte, Damage: 49 as short},
+						{Slot: 5 as byte, id: "ebwizardry:scroll", Count: 1 as byte, Damage: 54 as short},
+						{Slot: 6 as byte, id: "ebwizardry:scroll", Count: 1 as byte, Damage: 64 as short},
+						{Slot: 7 as byte, id: "ebwizardry:scroll", Count: 1 as byte, Damage: 79 as short},
+						{Slot: 8 as byte, id: "ebwizardry:scroll", Count: 1 as byte, Damage: 87 as short},
+						{Slot: 9 as byte, id: "ebwizardry:scroll", Count: 1 as byte, Damage: 101 as short}
+					]
+				})
+			);
 		}
 
 		RunCmd("scoreboard players set " + name + " loggedIn " + (logged_in+1));
