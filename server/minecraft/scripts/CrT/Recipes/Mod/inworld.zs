@@ -34,21 +34,7 @@ val arms = [
 	<atum:dagger_poison>,
 	<atum:iron_scimitar>,
 	<atum:iron_greatsword>,
-	<atum:iron_club>,
-	<cqrepoured:dagger_diamond>,
-	<cqrepoured:dagger_ninja>,
-	<cqrepoured:dagger_monking>,
-	<cqrepoured:sword_turtle>,
-	<cqrepoured:sword_spider>,
-	<cqrepoured:sword_moonlight>,
-	<cqrepoured:sword_sunshine>,
-	<cqrepoured:battle_axe_bull>,
-	<cqrepoured:sword_walker>,
-	<cqrepoured:great_sword_iron>,
-	<cqrepoured:great_sword_diamond>,
-	<cqrepoured:great_sword_bull>,
-	<cqrepoured:great_sword_monking>,
-	<cqrepoured:dagger_iron>
+	<atum:iron_club>
 ] as IItemStack[];
 for item in arms {
 	FluidToItem.transform(item.withTag({ench: [{lvl: 13 as short, id: 17 as short}]} as IData), <liquid:holy_water>, [item], true);
