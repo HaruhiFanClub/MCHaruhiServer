@@ -33,10 +33,10 @@ recipes.addShapeless(
 	function(out,ins,cInfo){
 		val info = ins.mark.tag.info;
 		return out.updateTag(info - "items" + {type: 0}).withLore([
-				"Name: "+info.name,
-				"UUID: "+info.uuid,
-				"Pos: "+"("+info.pos_x+","+info.pos_y+","+info.pos_z+","+info.dim+")",
-				"Time: "+info.time
+				"§r§7Name: "+info.name,
+				"§r§7UUID: "+info.uuid,
+				"§r§7Pos: "+"("+info.pos_x+","+info.pos_y+","+info.pos_z+","+info.dim+")",
+				"§r§7Time: "+info.time
 			]);
 	},
 	null
@@ -63,7 +63,7 @@ recipes.addShaped(
 	],
 	function(out,ins,cInfo){
 		val data = ins.mark.tag;
-		return out.updateTag(data + {ench: [{lvl: 0 as short, id: -1 as short}], type: 1} as IData).withLore(["§7Upgrade: Ender pearl"]);
+		return out.updateTag(data + {ench: [{lvl: 0 as short, id: -1 as short}], type: 1} as IData).withLore(["§r§7Upgrade: Ender pearl"]);
 	},
 	null
 );
@@ -85,7 +85,7 @@ recipes.addShapeless(
 	],
 	function(out,ins,cInfo){
 		val data = ins.mark.tag;
-		return out.updateTag(data + {ench: [{lvl: 0 as short, id: -1 as short}], type: 3} as IData).withLore(["§7Upgrade: Golden apple x2"]);
+		return out.updateTag(data + {ench: [{lvl: 0 as short, id: -1 as short}], type: 3} as IData).withLore(["§r§7Upgrade: Golden apple x2"]);
 	},
 	null
 );
@@ -106,7 +106,7 @@ recipes.addShapeless(
 	],
 	function(out,ins,cInfo){
 		val data = ins.mark.tag;
-		return out.updateTag(data + {type: 2} as IData).withLore(["§7Upgrade: Golden apple"]);
+		return out.updateTag(data + {type: 2} as IData).withLore(["§r§7Upgrade: Golden apple"]);
 	},
 	null
 );
