@@ -143,7 +143,7 @@ cmdGift.execute = function(command, server, sender, args) {
 			var str_array = str.split(":");
 			if (str_array[0] == "unlimited") {
 				if (str_array[1] == 1) {
-					ex_data = ex_data + {Unlimited: 1, display: {Lore: ["§r§6Unlimited"]}};
+					ex_data = ex_data + {Unlimited: 1 as byte, display: {Lore: ["§r§6Unlimited"]}};
 				}
 				continue;
 			}
