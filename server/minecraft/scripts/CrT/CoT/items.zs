@@ -151,6 +151,10 @@ giftItem.itemRightClick = function(item, world, player, hand) {
 					GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.gift.message.fail.3\"}"] as string[]);
 					return "PASS";
 				}
+				if ((gift_tags has "to") && (gift_tags.to != player_uuid)) {
+					GTellraw(player_uuid,["{\"translate\":\"item.contenttweaker.gift.message.fail.4\"}"] as string[]);
+					return "PASS";
+				}
 				for index in 0 .. items.length {
 					var item = items[index];
 					if (item has "tag") {

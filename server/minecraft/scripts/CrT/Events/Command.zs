@@ -155,6 +155,14 @@ cmdGift.execute = function(command, server, sender, args) {
 				ex_data = ex_data + {display: {Lore: [("§r"+str_array[1])]}};
 				continue;
 			}
+			if (str_array[0] == "to") {
+				ex_data = ex_data + {to: str_array[1]};
+				continue;
+			}
+			if (str_array[0] == "from") {
+				ex_data = ex_data + {from: str_array[1]};
+				continue;
+			}
 		}
 		player.give(<contenttweaker:gift>.withTag(({Items:inv} as IData) + ex_data));
 		print("Player " + player.name +"("+player.getUUID()+") created a gift pack (by using /gift command) with this items and tags:");
