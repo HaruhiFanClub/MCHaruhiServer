@@ -511,7 +511,7 @@ spells {
     B:"ebwizardry:conjure_sword"=true
 
     # Set to false to disable this spell
-    B:"ebwizardry:containment"=true
+    B:"ebwizardry:containment"=false
 
     # Set to false to disable this spell
     B:"ebwizardry:cure_effects"=true
