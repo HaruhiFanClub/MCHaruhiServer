@@ -9,6 +9,8 @@
 
 /server/minecraft/mods/*
 
+/server/minecraft/local/client/*
+
 /server/minecraft/config/*
 # !/server/minecraft/config/worldedit
 # /server/minecraft/config/worldedit/sessions
