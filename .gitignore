@@ -34,17 +34,6 @@
 !/server/minecraft/config/WizardryFates.cfg
 !/server/minecraft/config/xreliquary.cfg
 
-!/server/minecraft/config/cofh/
-/server/minecraft/config/cofh/core/client.cfg
-/server/minecraft/config/cofh/core/friends.cfg
-!/server/minecraft/config/cofh/core/common.cfg
-/server/minecraft/config/cofh/thermalcultivation
-server/minecraft/config/cofh/thermaldynamics
-server/minecraft/config/cofh/thermalexpansion
-server/minecraft/config/cofh/thermalfoundation
-server/minecraft/config/cofh/thermalinnovation
-server/minecraft/config/cofh/world
-
 !/server/minecraft/config/ebwizardry/
 /server/minecraft/config/ebwizardry/ebwizardry.cfg
 
