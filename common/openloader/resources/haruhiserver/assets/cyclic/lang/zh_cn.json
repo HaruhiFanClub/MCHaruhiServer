@@ -1,0 +1,95 @@
+{
+    "block.cyclic.hopper": "木制漏斗",
+    "block.cyclic.hopper.tooltip": "简单的物品漏斗",
+    "block.cyclic.hopper.guide": "类似于普通漏斗的逻辑，每刻移动1个物品。被红石充能时禁用。只从漏斗正上方吸取流体。",
+
+    "block.cyclic.hopper_gold": "金质漏洞",
+    "block.cyclic.hopper_gold.tooltip": "简单快速的物品漏斗",
+    "block.cyclic.hopper_gold.guide": "类似于普通漏斗的逻辑，每刻移动64个物品。被红石充能时禁用。只从漏斗正上方吸取物品。",
+
+    "block.cyclic.hopper_fluid": "流体漏斗",
+    "block.cyclic.hopper_fluid.tooltip": "吸取和输送流体",
+    "block.cyclic.hopper_fluid.guide": "类似于普通漏斗的逻辑，每隔一段时间移动一桶流体。被红石充能时禁用。只从漏斗正上方吸取流体。",
+
+    "block.cyclic.anvil_void": "虚空铁砧",
+    "block.cyclic.anvil_void.tooltip": "删除物品上的所有附魔",
+    "block.cyclic.anvil_void.guide": "通过删除附魔的NBT标签来删除任何东西上的所有附魔。不消耗能量。",
+
+    "block.cyclic.fan_slab": "风扇板",
+    "block.cyclic.fan_slab.tooltip": "将实体推开",
+    "block.cyclic.fan_slab.guide": "风扇板是一个简单的块状机器，旨在推动玩家、生物、物品和其他实体。",
+
+    "block.cyclic.rotator": "方块旋转器",
+    "block.cyclic.rotator.tooltip": "当被红石信号激活时旋转目标方块",
+    "block.cyclic.rotator.guide": "使用脉冲红石信号触发。旋转原版的方块状态。",
+
+    "block.cyclic.detector_moon": "月相传感器",
+    "block.cyclic.detector_moon.tooltip": "根据当前的月相发出红石信号",
+    "block.cyclic.detector_moon.guide": "根据当前的月相发出红石信号。红石信号强度范围沿1,3,5,7,9,11,13,15增长，然后回到1。白天保持充能，每天晚上随着月相的变化而变化。",
+
+    "block.cyclic.detector_weather": "天气传感器",
+    "block.cyclic.detector_weather.tooltip": "根据当前的天气发出红石信号",
+    "block.cyclic.detector_weather.guide": "雷雨时发出2级强度的红石信号，下雨时发出1级强度的红石信号。",
+
+    "block.cyclic.terra_glass": "泰拉玻璃",
+    "block.cyclic.terra_glass.tooltip": "与阳光反应促进作物生长",
+    "block.cyclic.terra_glass.guide": "如果直接接触阳光，会对阳光产生反应。在阳光下产生光，照亮农作物。",
+
+    "item.cyclic.charm_stone": "空灵圆环",
+    "item.cyclic.charm_stone.tooltip": "免疫窒息和鞘翅撞击的伤害",
+
+    "item.cyclic.charm_attack_speed": "风之力护手",
+    "item.cyclic.charm_attack_speed.tooltip": "提高攻击速度",
+
+    "item.cyclic.charm_luck": "幸运哈雷之戒",
+    "item.cyclic.charm_luck.tooltip": "提高玩家幸运值",
+
+    "item.cyclic.charm_xp_blocker": "被诅咒的经验之戒",
+    "item.cyclic.charm_xp_blocker.tooltip": "阻止拾取经验球",
+
+    "item.cyclic.charm_xp_speed": "经验之戒",
+    "item.cyclic.charm_xp_speed.tooltip": "尽可能快地拾取经验球",
+
+    "item.cyclic.charm_creeper": "冬眠的苦力怕孢子",
+    "item.cyclic.charm_creeper.tooltip": "免疫爆炸伤害",
+    "item.cyclic.charm_creeper.guide": "免疫爆炸伤害",
+
+    "item.cyclic.charm_knockback_resistance": "抗性钢盔",
+    "item.cyclic.charm_knockback_resistance.tooltip": "免疫击退",
+    "item.cyclic.charm_knockback_resistance.guide": "免疫击退。当受到伤害时，玩家将不会被击退。",
+
+    "item.cyclic.charm_crit": "泰坦之臂",
+    "item.cyclic.charm_crit.tooltip": "重击的伤害翻倍",
+
+    "item.cyclic.quiver_lightning": "圣骑士箭袋",
+
+    "item.cyclic.quiver_damage": "十字军箭袋",
+
+    "item.cyclic.charm_venom": "蜘蛛精护符",
+    "item.cyclic.charm_venom.tooltip": "攻击时有25%的机会使目标中毒",
+
+    "item.cyclic.charm_water": "水肺符咒",
+    "item.cyclic.charm_water.tooltip": "免疫溺水伤害",
+    "item.cyclic.charm_water.guide": "免疫溺水伤害",
+
+    "item.cyclic.charm_starvation": "永恒冰糖",
+    "item.cyclic.charm_starvation.tooltip": "免疫饥饿造成的伤害和死亡",
+    "item.cyclic.charm_starvation.guide": "免疫饥饿造成的伤害和死亡",
+
+    "item.cyclic.charm_invisible": "隐身斗篷",
+    "item.cyclic.charm_invisible.tooltip": "给予持续的隐身效果",
+
+    "item.cyclic.charm_boostpotion": "残缺的护身符",
+    "item.cyclic.charm_boostpotion.tooltip": "药水持续时间增加50%",
+
+    "item.cyclic.charm_magicdefense": "神秘遗物",
+    "item.cyclic.charm_magicdefense.tooltip": "受到的魔法伤害减少50%",
+
+    "item.cyclic.charm_stealthpotion": "炼金符文徽章",
+    "item.cyclic.charm_stealthpotion.tooltip": "禁用药水粒子效果",
+
+    "item.cyclic.charm_antipotion": "炼金术面纱",
+
+    "item.cyclic.charm_longfall": "丝织拖鞋",
+    "item.cyclic.charm_longfall.tooltip": "免疫跌落伤害"
+}
