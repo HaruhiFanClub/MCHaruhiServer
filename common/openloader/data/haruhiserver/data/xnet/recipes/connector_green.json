@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["1C1", "rgr", "1r1"],
+    "key": {
+        "g": {
+            "tag": "forge:nuggets/electrum"
+        },
+        "1": {
+            "tag": "forge:dyes/green"
+        },
+        "C": {
+            "tag": "forge:chests"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        }
+    },
+    "result": {
+        "item": "xnet:connector_green"
+    }
+}

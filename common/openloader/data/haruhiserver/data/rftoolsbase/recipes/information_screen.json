@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["ggg", "lll", "rbr"],
+    "key": {
+        "g": {
+            "tag": "forge:glass_panes"
+        },
+        "l": {
+            "tag": "forge:ingots/lumium"
+        },
+        "b": {
+            "item": "rftoolsbase:machine_base"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        }
+    },
+    "result": {
+        "item": "rftoolsbase:information_screen"
+    }
+}

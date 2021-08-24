@@ -1,0 +1,18 @@
+{
+    "type": "mcjtylib:copy_nbt",
+    "pattern": ["rir", "ici", "rir"],
+    "key": {
+        "c": {
+            "item": "rftoolspower:dimensionalcell"
+        },
+        "i": {
+            "item": "rftoolsbase:infused_diamond"
+        },
+        "r": {
+            "tag": "forge:storage_blocks/signalum"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:dimensionalcell_advanced"
+    }
+}

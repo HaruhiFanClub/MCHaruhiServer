@@ -1,0 +1,2 @@
+execute if entity @s[distance=..6] if block ~ ~ ~ cyclic:workbench run setblock ~ ~ ~ minecraft:air replace
+execute if entity @s[distance=..6] unless block ~ ~ ~ cyclic:workbench positioned ^ ^ ^0.005 run function haruhicore:ray

@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["tlt", "cfc", "imi"],
+    "key": {
+        "t": {
+            "item": "minecraft:redstone_torch"
+        },
+        "c": {
+            "tag": "minecraft:coals"
+        },
+        "l": {
+            "item": "rftoolsbase:filter_module"
+        },
+        "i": {
+            "tag": "forge:ingots/invar"
+        },
+        "m": {
+            "item": "rftoolsbase:machine_frame"
+        },
+        "f": {
+            "item": "minecraft:furnace"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:coalgenerator"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["s1s", "rgr", "srs"],
+    "key": {
+        "g": {
+            "tag": "forge:nuggets/electrum"
+        },
+        "s": {
+            "tag": "forge:string"
+        },
+        "1": {
+            "tag": "forge:dyes/green"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        }
+    },
+    "result": {
+        "item": "xnet:netcable_green",
+        "count": 4
+    }
+}

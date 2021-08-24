@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["rdr", "pfp", "rer"],
+    "key": {
+        "p": {
+            "tag": "forge:dusts/prismarine"
+        },
+        "r": {
+            "tag": "forge:storage_blocks/signalum"
+        },
+        "d": {
+            "tag": "forge:gems/diamond"
+        },
+        "e": {
+            "tag": "forge:gems/emerald"
+        },
+        "f": {
+            "item": "rftoolsbase:machine_frame"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:dimensionalcell"
+    }
+}

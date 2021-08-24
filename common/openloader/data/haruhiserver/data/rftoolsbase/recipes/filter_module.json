@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [" h ", "rir", " p "],
+    "key": {
+        "h": {
+            "item": "minecraft:hopper"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "p": {
+            "tag": "forge:paper"
+        },
+        "i": {
+            "tag": "forge:gems/opal"
+        }
+    },
+    "result": {
+        "item": "rftoolsbase:filter_module"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "type": "mcjtylib:copy_nbt",
+    "pattern": [" c ", "pmp", "grg"],
+    "key": {
+        "p": {
+            "tag": "forge:dusts/prismarine"
+        },
+        "m": {
+            "item": "rftoolsstorage:storage_module0"
+        },
+        "g": {
+            "tag": "forge:storage_blocks/electrum"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "c": {
+            "tag": "forge:chests"
+        }
+    },
+    "result": {
+        "item": "rftoolsstorage:storage_module1"
+    }
+}

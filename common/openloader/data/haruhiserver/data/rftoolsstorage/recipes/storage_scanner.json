@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["sts", "gfg", "cpc"],
+    "key": {
+        "g": {
+            "tag": "forge:ingots/electrum"
+        },
+        "t": {
+            "item": "minecraft:redstone_torch"
+        },
+        "s": {
+            "tag": "forge:dusts/signalum"
+        },
+        "c": {
+            "item": "minecraft:comparator"
+        },
+        "f": {
+            "item": "rftoolsbase:machine_frame"
+        },
+        "p": {
+            "item": "rftoolsbase:infused_enderpearl"
+        }
+    },
+    "result": {
+        "item": "rftoolsstorage:storage_scanner"
+    }
+}

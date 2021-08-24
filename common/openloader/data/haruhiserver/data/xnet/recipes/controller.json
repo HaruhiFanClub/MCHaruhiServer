@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["odo", "rfr", "cgc"],
+    "key": {
+        "o": {
+            "item": "minecraft:observer"
+        },
+        "d": {
+            "item": "rftoolsbase:infused_diamond"
+        },
+        "g": {
+            "tag": "forge:ingots/electrum"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "f": {
+            "item": "rftoolsbase:machine_frame"
+        },
+        "c": {
+            "tag": "forge:storage_blocks/copper"
+        }
+    },
+    "result": {
+        "item": "xnet:controller"
+    }
+}

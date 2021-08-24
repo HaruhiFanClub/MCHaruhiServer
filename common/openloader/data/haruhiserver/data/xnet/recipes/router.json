@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["IpI", "rFr", "olo"],
+    "key": {
+        "I": {
+            "item": "minecraft:powered_rail"
+        },
+        "p": {
+            "item": "rftoolsbase:infused_enderpearl"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "F": {
+            "item": "rftoolsbase:machine_frame"
+        },
+        "o": {
+            "tag": "forge:storage_blocks/opal"
+        },
+        "l": {
+            "tag": "forge:storage_blocks/lumium"
+        }
+    },
+    "result": {
+        "item": "xnet:router"
+    }
+}

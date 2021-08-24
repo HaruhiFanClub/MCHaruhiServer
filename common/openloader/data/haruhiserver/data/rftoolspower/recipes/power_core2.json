@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["ses", "rbr", "sis"],
+    "key": {
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "b": {
+            "item": "minecraft:redstone_block"
+        },
+        "s": {
+            "item": "rftoolsbase:dimensionalshard"
+        },
+        "i": {
+            "tag": "forge:dusts/silver"
+        },
+        "e": {
+            "item": "minecraft:emerald"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:power_core2"
+    }
+}

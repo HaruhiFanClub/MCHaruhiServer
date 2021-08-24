@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["rdr", "qfq", "rdr"],
+    "key": {
+        "q": {
+            "tag": "forge:gems/quartz"
+        },
+        "r": {
+            "tag": "forge:storage_blocks/signalum"
+        },
+        "d": {
+            "tag": "forge:gems/diamond"
+        },
+        "f": {
+            "item": "rftoolsbase:machine_frame"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:dimensionalcell_simple"
+    }
+}

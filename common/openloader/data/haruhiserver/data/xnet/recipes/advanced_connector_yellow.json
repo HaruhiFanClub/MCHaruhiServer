@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["Co", "dr"],
+    "key": {
+        "C": {
+            "item": "xnet:connector_yellow"
+        },
+        "r": {
+            "tag": "forge:paper"
+        },
+        "d": {
+            "item": "minecraft:diamond"
+        },
+        "o": {
+            "tag": "forge:dusts/enderium"
+        }
+    },
+    "result": {
+        "item": "xnet:advanced_connector_yellow"
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["deg", "irG", "qcL"],
+    "key": {
+        "q": {
+            "tag": "forge:gems/quartz"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "c": {
+            "item": "minecraft:prismarine_shard"
+        },
+        "d": {
+            "tag": "forge:gems/diamond"
+        },
+        "e": {
+            "item": "minecraft:emerald"
+        },
+        "g": {
+            "item": "minecraft:gold_ingot"
+        },
+        "G": {
+            "item": "minecraft:glowstone_dust"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "L": {
+            "item": "minecraft:glass"
+        }
+    },
+    "result": {
+        "item": "rftoolsbase:dimensionalshard"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["sds", "rbr", "sts"],
+    "key": {
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "b": {
+            "item": "minecraft:redstone_block"
+        },
+        "s": {
+            "item": "rftoolsbase:dimensionalshard"
+        },
+        "d": {
+            "item": "rftoolsbase:infused_diamond"
+        },
+
+        "t": {
+            "tag": "forge:dusts/titanium"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:power_core3"
+    }
+}

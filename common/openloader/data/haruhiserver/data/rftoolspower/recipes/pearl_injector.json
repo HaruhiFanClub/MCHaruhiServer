@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [" c ", "rfr", " h "],
+    "key": {
+        "c": {
+            "tag": "forge:chests"
+        },
+        "h": {
+            "item": "minecraft:hopper"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "f": {
+            "item": "rftoolsbase:machine_frame"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:pearl_injector"
+    }
+}

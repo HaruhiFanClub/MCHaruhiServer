@@ -1,0 +1,18 @@
+{
+    "type": "mcjtylib:copy_nbt",
+    "pattern": ["rgr", "gpg", "rgr"],
+    "key": {
+        "g": {
+            "tag": "forge:nuggets/electrum"
+        },
+        "p": {
+            "tag": "forge:paper"
+        },
+        "r": {
+            "tag": "forge:dusts/redstone"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:powercell_card"
+    }
+}

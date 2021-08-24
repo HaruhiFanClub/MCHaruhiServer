@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["pc", "rp"],
+    "key": {
+        "c": {
+            "item": "minecraft:crafting_table"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "p": {
+            "tag": "forge:paper"
+        }
+    },
+    "result": {
+        "item": "rftoolsbase:crafting_card",
+        "count": 1
+    }
+}

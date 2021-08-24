@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "haruhicore",
+    "ingredients": [
+        { "item": "minecraft:dragon_breath" },
+        { "item": "minecraft:dragon_breath" },
+        { "item": "minecraft:dragon_breath" },
+        { "item": "minecraft:dragon_breath" },
+        { "item": "minecraft:dragon_breath" },
+        { "item": "minecraft:dragon_breath" },
+        { "item": "minecraft:dragon_breath" },
+        { "item": "minecraft:dragon_breath" },
+        { "item": "haruhicore:reinforcement_stone" }
+    ],
+    "result": {
+        "item": "haruhicore:epic_reinforcement_stone",
+        "count": 1
+    }
+}

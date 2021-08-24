@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["ili", "gdg", "ili"],
+    "key": {
+        "g": {
+            "tag": "forge:nuggets/electrum"
+        },
+        "d": {
+            "item": "rftoolsbase:infused_diamond"
+        },
+        "i": {
+            "tag": "forge:ingots/iron"
+        },
+        "l": {
+            "tag": "forge:dyes/blue"
+        }
+    },
+    "result": {
+        "item": "rftoolsbase:machine_frame"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["ro", "dp"],
+    "key": {
+        "p": {
+            "tag": "forge:paper"
+        },
+        "r": {
+            "tag": "forge:dusts/redstone"
+        },
+        "d": {
+            "item": "minecraft:diamond"
+        },
+        "o": {
+            "tag": "forge:dusts/enderium"
+        }
+    },
+    "result": {
+        "item": "xnet:connector_upgrade"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["rcr", "qfq", "rbr"],
+    "key": {
+        "q": {
+            "tag": "forge:gems/quartz"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "c": {
+            "item": "minecraft:ender_chest"
+        },
+        "b": {
+            "tag": "forge:ingots/bronze"
+        },
+        "f": {
+            "item": "rftoolsbase:machine_frame"
+        }
+    },
+    "result": {
+        "item": "rftoolsstorage:modular_storage"
+    }
+}

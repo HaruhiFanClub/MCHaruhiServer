@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["rsr", "sfs", "rsr"],
+    "key": {
+        "r": {
+            "tag": "forge:dusts/redstone"
+        },
+        "s": {
+            "tag": "forge:dusts/signalum"
+        },
+        "f": {
+            "item": "rftoolsbase:machine_frame"
+        }
+    },
+    "result": {
+        "item": "xnet:redstone_proxy"
+    }
+}

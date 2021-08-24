@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["xyx", "rfr", "xyx"],
+    "key": {
+        "x": {
+            "tag": "forge:rods/blaze"
+        },
+        "y": {
+            "item": "rftoolsbase:infused_diamond"
+        },
+        "r": {
+            "tag": "forge:storage_blocks/signalum"
+        },
+        "f": {
+            "item": "rftoolsbase:machine_frame"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:blazing_generator"
+    }
+}

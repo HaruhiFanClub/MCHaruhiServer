@@ -1,0 +1,27 @@
+{
+    "type": "mcjtylib:copy_nbt",
+    "pattern": ["ece", "dmd", "rtr"],
+    "key": {
+        "e": {
+            "tag": "forge:dusts/enderium"
+        },
+        "d": {
+            "item": "rftoolsbase:infused_diamond"
+        },
+        "m": {
+            "item": "rftoolsstorage:storage_module2"
+        },
+        "t": {
+            "tag": "forge:storage_blocks/titanium"
+        },
+        "r": {
+            "tag": "forge:storage_blocks/signalum"
+        },
+        "c": {
+            "tag": "forge:chests"
+        }
+    },
+    "result": {
+        "item": "rftoolsstorage:storage_module3"
+    }
+}

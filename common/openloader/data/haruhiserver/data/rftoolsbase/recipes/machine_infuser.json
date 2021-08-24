@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["srs", "dMd", "srs"],
+    "key": {
+        "r": {
+            "tag": "forge:ingots/signalum"
+        },
+        "s": {
+            "item": "rftoolsbase:dimensionalshard"
+        },
+        "d": {
+            "tag": "forge:gems/diamond"
+        },
+        "M": {
+            "item": "rftoolsbase:machine_frame"
+        }
+    },
+    "result": {
+        "item": "rftoolsbase:machine_infuser"
+    }
+}

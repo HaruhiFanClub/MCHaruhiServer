@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["qdq", "rbr", "qrq"],
+    "key": {
+        "q": {
+            "tag": "forge:gems/quartz"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "b": {
+            "item": "minecraft:redstone_block"
+        },
+        "d": {
+            "tag": "forge:gems/diamond"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:power_core1"
+    }
+}

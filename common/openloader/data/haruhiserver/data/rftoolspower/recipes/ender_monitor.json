@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [" r ", "tpt", "bbb"],
+    "key": {
+        "b": {
+            "item": "rftoolsbase:machine_base"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        },
+        "t": {
+            "item": "minecraft:redstone_torch"
+        },
+        "p": {
+            "item": "rftoolsbase:infused_enderpearl"
+        }
+    },
+    "result": {
+        "item": "rftoolspower:ender_monitor"
+    }
+}

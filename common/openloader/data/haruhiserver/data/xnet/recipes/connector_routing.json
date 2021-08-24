@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["rrr", "gCg", "rrr"],
+    "key": {
+        "g": {
+            "tag": "forge:nuggets/gold"
+        },
+        "C": {
+            "tag": "xnet:connectors"
+        },
+        "r": {
+            "tag": "forge:dusts/signalum"
+        }
+    },
+    "result": {
+        "item": "xnet:connector_routing"
+    }
+}

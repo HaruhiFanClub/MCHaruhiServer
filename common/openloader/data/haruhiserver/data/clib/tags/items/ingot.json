@@ -1,0 +1,29 @@
+{
+    "replace": false,
+    "values": [
+        "clib:tin_ingot",
+        "clib:steel_ingot",
+        "clib:steel_ingot",
+        "clib:aluminum_ingot",
+        "clib:lead_ingot",
+        "clib:lead_ingot",
+        "clib:copper_ingot",
+        "clib:silver_ingot",
+        "clib:lumium_ingot",
+        "clib:nickel_ingot",
+        "clib:invar_ingot",
+        "clib:electrum_ingot",
+        "clib:platinum_ingot",
+        "clib:enderium_ingot",
+        "clib:signalum_ingot",
+        "clib:tungsten_ingot",
+        "clib:bronze_ingot",
+        "clib:titanium_ingot",
+        "clib:uranium_ingot",
+        "clib:cobalt_ingot",
+        "clib:brass_ingot",
+        "clib:zinc_ingot",
+        "clib:chromium_ingot",
+        "clib:thorium_ingot"
+    ]
+}
