@@ -2,7 +2,8 @@
     "parent": "haruhicore:sosdan/armband",
     "display": {
         "icon": {
-            "item": "minecraft:golden_sword"
+            "item": "minecraft:golden_sword",
+            "nbt": "{Enchantments:[{}]}"
         },
         "title": {
             "translate": "advancements.haruhicore.sosdan.reinforcement.title"
