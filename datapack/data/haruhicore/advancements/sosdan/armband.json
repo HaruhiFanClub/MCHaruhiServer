@@ -1,0 +1,30 @@
+{
+    "display": {
+        "icon": {
+            "item": "haruhicore:reinforcement_stone"
+        },
+        "title": {
+            "translate": "advancements.haruhicore.sosdan.armband.title"
+        },
+        "description": {
+            "translate": "advancements.haruhicore.sosdan.armband.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "armband": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "haruhicore:reinforcement_stone"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [["armband"]]
+}
