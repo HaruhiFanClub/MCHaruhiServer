@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["WWW", "WSW", "   "],
+    "key": {
+        "W": {
+            "item": "minecraft:black_wool"
+        },
+        "S": {
+            "item": "haruhicore:reinforcement_stone"
+        }
+    },
+    "result": {
+        "item": "haruhicore:wizard_hat",
+        "count": 1
+    }
+}
