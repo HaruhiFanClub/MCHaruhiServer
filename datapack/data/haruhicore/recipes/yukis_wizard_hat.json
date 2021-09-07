@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["WWW", "WSW", " S "],
+    "key": {
+        "W": {
+            "item": "minecraft:black_wool"
+        },
+        "S": {
+            "item": "haruhicore:epic_reinforcement_stone"
+        }
+    },
+    "result": {
+        "item": "haruhicore:yukis_wizard_hat",
+        "count": 1
+    }
+}
