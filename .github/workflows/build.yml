@@ -2,10 +2,10 @@ name: build
 
 on:
     # Triggers the workflow on push or pull request events but only for the v7 branch
-    #push:
-    #  branches: [ v7 ]
-    #pull_request:
-    #  branches: [ v7 ]
+    push:
+        branches: [v7]
+    pull_request:
+        branches: [v7]
 
     # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
@@ -21,11 +21,23 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
+            #======#
+            # VARS #
+
+            - name: Set vars
+              run: |
+                  echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+                  echo "CI_VERSION=`echo rev.${{env.SHORT_SHA}}-build.${{github.run_number}}" >> $GITHUB_ENV
+                  echo ${{env.SHORT_SHA}}
+                  echo ${{env.CI_VERSION}}
+
+            #=======#
+            # CLEAN #
+
             - name: Clean build dir
               run: |
                   rm -rf ${{env.BUILD_DIR}}
                   mkdir ${{env.BUILD_DIR}}
-                  echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
 
             #=======#
             # BUILD #
