@@ -29,25 +29,29 @@ jobs:
 
             - name: Build server pack
               run: |
-                  mkdir "$SERVER_DIR"
-                  mkdir "$SERVER_DIR/openloader"
-                  mkdir "$SERVER_DIR/openloader/data"
-                  cp -r ./datapack "$SERVER_DIR/openloader/data/haruhiserver"
+                  mkdir $SERVER_DIR
+                  mkdir $SERVER_DIR/openloader
+                  mkdir $SERVER_DIR/openloader/data
+                  cp -r ./datapack $SERVER_DIR/openloader/data/haruhiserver
 
             - name: Build client pack
               run: |
-                  mkdir "$CLIENT_DIR"
-                  mkdir "$CLIENT_DIR/overrides"
-                  mkdir "$CLIENT_DIR/overrides/openloader"
-                  mkdir "$CLIENT_DIR/overrides/openloader/resources"
-                  cp -r ./resourcepack "$CLIENT_DIR/overrides/openloader/resources/haruhiserver"
+                  mkdir $CLIENT_DIR
+                  mkdir $CLIENT_DIR/overrides
+                  mkdir $CLIENT_DIR/overrides/openloader
+                  mkdir $CLIENT_DIR/overrides/openloader/resources
+                  cp -r ./resourcepack $CLIENT_DIR/overrides/openloader/resources/haruhiserver
 
-            - uses: montudor/action-zip@v1
-              with:
-                  args: zip -r "$ARTIFACT_DIR/client.zip" "$CLIENT_DIR"
-            - uses: montudor/action-zip@v1
-              with:
-                  args: zip -r "$ARTIFACT_DIR/server.zip" "$SERVER_DIR"
+            # - uses: montudor/action-zip@v1
+            #   with:
+            #       args: zip -r $ARTIFACT_DIR/client.zip $CLIENT_DIR
+            # - uses: montudor/action-zip@v1
+            #   with:
+            #       args: zip -r $ARTIFACT_DIR/server.zip $SERVER_DIR
+            - name: Build artifacts
+              run: |
+                  cp -r $CLIENT_DIR $ARTIFACT_DIR
+                  cp -r $SERVER_DIR $ARTIFACT_DIR
 
             - name: Upload build artifacts
               uses: actions/upload-artifact@v1
