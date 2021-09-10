@@ -28,7 +28,7 @@ jobs:
                   echo Run Number: ${{ github.run_number }}
                   echo SHA: $GITHUB_SHA
                   echo SHA: ${{ github.sha }}
-                  echo SHA: ${{ github.sha:0:7 }}
+                  echo ${GITHUB_SHA:0:7}
                   rm -rf ${{ env.BUILD_DIR }}
                   mkdir ${{ env.BUILD_DIR }}
                   mkdir ${{ env.ARTIFACT_DIR }}
