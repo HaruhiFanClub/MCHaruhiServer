@@ -54,6 +54,9 @@ jobs:
                   mkdir ${{env.CLIENT_DIR}}/overrides/openloader
                   mkdir ${{env.CLIENT_DIR}}/overrides/openloader/resources
                   cp -r ./resourcepack ${{env.CLIENT_DIR}}/overrides/openloader/resources/haruhiserver
+                  cp ./manifest.json ${{env.CLIENT_DIR}}/manifest.json
+                  sed -i -e 's/${packname}/BasicClient/g' ${{env.CLIENT_DIR}}/manifest.json
+                  sed -i -e 's/${version}/'"${{env.CI_VERSION}}"'/g' ${{env.CLIENT_DIR}}/manifest.json
 
             #==========#
             # ARTIFACT #
