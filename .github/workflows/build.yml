@@ -24,7 +24,8 @@ jobs:
 
             - name: Clean build dir
               run: |
-                  echo ${{ env.GITHUB_RUN_NUMBER }},${{ env.GITHUB_SHA }}
+                  echo Run Number: $GITHUB_RUN_NUMBER
+                  echo SHA: $GITHUB_SHA
                   rm -rf ${{ env.BUILD_DIR }}
                   mkdir ${{ env.BUILD_DIR }}
                   mkdir ${{ env.ARTIFACT_DIR }}
