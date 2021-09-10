@@ -25,10 +25,16 @@ jobs:
             - name: Clean build dir
               run: |
                   echo Run Number: $GITHUB_RUN_NUMBER
+                  echo Run Number: ${{ github.run_number }}
                   echo SHA: $GITHUB_SHA
+                  echo SHA: ${{ github.sha }}
+                  echo SHA: ${{ github.sha:0:7 }}
                   rm -rf ${{ env.BUILD_DIR }}
                   mkdir ${{ env.BUILD_DIR }}
                   mkdir ${{ env.ARTIFACT_DIR }}
+
+            #=======#
+            # BUILD #
 
             - name: Build server pack
               run: |
@@ -45,22 +51,15 @@ jobs:
                   mkdir ${{ env.CLIENT_DIR }}/overrides/openloader/resources
                   cp -r ./resourcepack ${{ env.CLIENT_DIR }}/overrides/openloader/resources/haruhiserver
 
-            # - uses: montudor/action-zip@v1
-            #   with:
-            #       args: zip -r $ARTIFACT_DIR/client.zip ${{ env.CLIENT_DIR }}
-            # - uses: montudor/action-zip@v1
-            #   with:
-            #       args: zip -r $ARTIFACT_DIR/server.zip ${{ env.SERVER_DIR }}
-            # - name: Build artifacts
-            #   run: |
-            #       cp -r ${{ env.SERVER_DIR }} ${{ env.ARTIFACT_DIR }}
-            #       cp -r ${{ env.CLIENT_DIR }} ${{ env.ARTIFACT_DIR }}
+            #==========#
+            # ARTIFACT #
 
             - name: Upload server pack
               uses: actions/upload-artifact@v1
               with:
                   name: HaruhiServer-ServerPack
                   path: ${{ env.SERVER_DIR }}
+
             - name: Upload client pack
               uses: actions/upload-artifact@v1
               with:
