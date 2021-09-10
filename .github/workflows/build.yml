@@ -17,39 +17,32 @@ jobs:
             BUILD_DIR: ./build
             SERVER_DIR: ./build/server
             CLIENT_DIR: ./build/client
-            ARTIFACT_DIR: ./build/artifacts
 
         steps:
             - uses: actions/checkout@v2
 
             - name: Clean build dir
               run: |
-                  echo Run Number: $GITHUB_RUN_NUMBER
-                  echo Run Number: ${{ github.run_number }}
-                  echo SHA: $GITHUB_SHA
-                  echo SHA: ${{ github.sha }}
-                  echo ${GITHUB_SHA:0:7}
-                  rm -rf ${{ env.BUILD_DIR }}
-                  mkdir ${{ env.BUILD_DIR }}
-                  mkdir ${{ env.ARTIFACT_DIR }}
+                  rm -rf ${{env.BUILD_DIR}}
+                  mkdir ${{env.BUILD_DIR}}
 
             #=======#
             # BUILD #
 
             - name: Build server pack
               run: |
-                  mkdir ${{ env.SERVER_DIR }}
-                  mkdir ${{ env.SERVER_DIR }}/openloader
-                  mkdir ${{ env.SERVER_DIR }}/openloader/data
-                  cp -r ./datapack ${{ env.SERVER_DIR }}/openloader/data/haruhiserver
+                  mkdir ${{env.SERVER_DIR}}
+                  mkdir ${{env.SERVER_DIR}}/openloader
+                  mkdir ${{env.SERVER_DIR}}/openloader/data
+                  cp -r ./datapack ${{env.SERVER_DIR}}/openloader/data/haruhiserver
 
             - name: Build client pack
               run: |
-                  mkdir ${{ env.CLIENT_DIR }}
-                  mkdir ${{ env.CLIENT_DIR }}/overrides
-                  mkdir ${{ env.CLIENT_DIR }}/overrides/openloader
-                  mkdir ${{ env.CLIENT_DIR }}/overrides/openloader/resources
-                  cp -r ./resourcepack ${{ env.CLIENT_DIR }}/overrides/openloader/resources/haruhiserver
+                  mkdir ${{env.CLIENT_DIR}}
+                  mkdir ${{env.CLIENT_DIR}}/overrides
+                  mkdir ${{env.CLIENT_DIR}}/overrides/openloader
+                  mkdir ${{env.CLIENT_DIR}}/overrides/openloader/resources
+                  cp -r ./resourcepack ${{env.CLIENT_DIR}}/overrides/openloader/resources/haruhiserver
 
             #==========#
             # ARTIFACT #
@@ -57,11 +50,11 @@ jobs:
             - name: Upload server pack
               uses: actions/upload-artifact@v1
               with:
-                  name: HaruhiServer-ServerPack
-                  path: ${{ env.SERVER_DIR }}
+                  name: HaruhiServer-ServerPack-rev.${GITHUB_SHA:0:7}-build.$GITHUB_RUN_NUMBER
+                  path: ${{env.SERVER_DIR}}
 
             - name: Upload client pack
               uses: actions/upload-artifact@v1
               with:
-                  name: HaruhiServer-ClientPack
-                  path: ${{ env.CLIENT_DIR }}
+                  name: HaruhiServer-ClientPack-rev.${GITHUB_SHA:0:7}-build.$GITHUB_RUN_NUMBER
+                  path: ${{env.CLIENT_DIR}}
