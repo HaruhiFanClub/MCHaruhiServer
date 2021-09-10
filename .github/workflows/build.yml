@@ -25,6 +25,7 @@ jobs:
               run: |
                   rm -rf ${{env.BUILD_DIR}}
                   mkdir ${{env.BUILD_DIR}}
+                  echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
 
             #=======#
             # BUILD #
@@ -50,11 +51,11 @@ jobs:
             - name: Upload server pack
               uses: actions/upload-artifact@v1
               with:
-                  name: HaruhiServer-ServerPack-rev.${GITHUB_SHA:0:7}-build.$GITHUB_RUN_NUMBER
+                  name: HaruhiServer-ServerPack-rev.${{env.SHORT_SHA}}-build.${{github.run_number}}
                   path: ${{env.SERVER_DIR}}
 
             - name: Upload client pack
               uses: actions/upload-artifact@v1
               with:
-                  name: HaruhiServer-ClientPack-rev.${GITHUB_SHA:0:7}-build.$GITHUB_RUN_NUMBER
+                  name: HaruhiServer-ClientPack-rev.${{env.SHORT_SHA}}-build.${{github.run_number}}
                   path: ${{env.CLIENT_DIR}}
