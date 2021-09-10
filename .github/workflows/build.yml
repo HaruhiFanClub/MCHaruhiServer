@@ -26,8 +26,8 @@ jobs:
 
             - name: Set vars
               run: |
-                  echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
-                  echo "CI_VERSION=`echo rev.${{env.SHORT_SHA}}-build.${{github.run_number}}`" >> $GITHUB_ENV
+                  echo "SHORT_SHA=`echo ${GITHUB_SHA:0:7}`" >> $GITHUB_ENV
+                  echo "CI_VERSION=`echo rev.${GITHUB_SHA:0:7}-build.${{github.run_number}}`" >> $GITHUB_ENV
 
             #=======#
             # CLEAN #
