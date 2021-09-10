@@ -28,8 +28,6 @@ jobs:
               run: |
                   echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
                   echo "CI_VERSION=`echo rev.${{env.SHORT_SHA}}-build.${{github.run_number}}`" >> $GITHUB_ENV
-                  echo ${{env.SHORT_SHA}}
-                  echo ${{env.CI_VERSION}}
 
             #=======#
             # CLEAN #
@@ -63,11 +61,11 @@ jobs:
             - name: Upload server pack
               uses: actions/upload-artifact@v1
               with:
-                  name: HaruhiServer-ServerPack-rev.${{env.SHORT_SHA}}-build.${{github.run_number}}
+                  name: HaruhiServer-ServerPack-${{env.CI_VERSION}}
                   path: ${{env.SERVER_DIR}}
 
             - name: Upload client pack
               uses: actions/upload-artifact@v1
               with:
-                  name: HaruhiServer-ClientPack-rev.${{env.SHORT_SHA}}-build.${{github.run_number}}
+                  name: HaruhiServer-ClientPack-${{env.CI_VERSION}}
                   path: ${{env.CLIENT_DIR}}
