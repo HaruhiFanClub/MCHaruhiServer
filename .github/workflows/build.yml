@@ -6,6 +6,7 @@ on:
         branches: [v7]
     pull_request:
         branches: [v7]
+        types: [opened]
 
     # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
