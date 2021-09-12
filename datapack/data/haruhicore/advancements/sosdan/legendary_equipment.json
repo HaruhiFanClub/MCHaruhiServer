@@ -5,10 +5,10 @@
             "item": "haruhicore:danchou_cone"
         },
         "title": {
-            "translate": "advancements.haruhicore.sosdan.epic.title"
+            "translate": "advancements.haruhicore.sosdan.legendary_equipment.title"
         },
         "description": {
-            "translate": "advancements.haruhicore.sosdan.epic.description"
+            "translate": "advancements.haruhicore.sosdan.legendary_equipment.description"
         },
         "frame": "challenge",
         "show_toast": true,
