@@ -34,6 +34,10 @@
         [
             "minecraft:chests/igloo_chest",
             "haruhicore:inject/minecraft/chests/igloo_chest"
+        ],
+        [
+            "minecraft:chests/jungle_temple",
+            "haruhicore:inject/minecraft/chests/jungle_temple"
         ]
     ]
 }
