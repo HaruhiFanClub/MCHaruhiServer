@@ -2,5 +2,10 @@
     "type": "ahutils:loot_injector",
     "conditions": [],
     "strict_parameter": true,
-    "injectors": []
+    "injectors": [
+        [
+            "minecraft:chests/abandoned_mineshaft",
+            "haruhicore:inject/minecraft/chests/abandoned_mineshaft"
+        ]
+    ]
 }
