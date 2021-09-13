@@ -50,6 +50,10 @@
         [
             "minecraft:chests/ruined_portal",
             "haruhicore:inject/minecraft/chests/ruined_portal"
+        ],
+        [
+            "minecraft:chests/shipwreck_treasure",
+            "haruhicore:inject/minecraft/chests/shipwreck_treasure"
         ]
     ]
 }
