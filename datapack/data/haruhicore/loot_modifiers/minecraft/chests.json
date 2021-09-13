@@ -1,0 +1,6 @@
+{
+    "type": "ahutils:loot_injector",
+    "conditions": [],
+    "strict_parameter": true,
+    "injectors": []
+}
