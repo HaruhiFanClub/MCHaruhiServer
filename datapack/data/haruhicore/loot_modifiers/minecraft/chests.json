@@ -26,6 +26,10 @@
         [
             "minecraft:chests/desert_pyramid",
             "haruhicore:inject/minecraft/chests/desert_pyramid"
+        ],
+        [
+            "minecraft:chests/end_city_treasure",
+            "haruhicore:inject/minecraft/chests/end_city_treasure"
         ]
     ]
 }
