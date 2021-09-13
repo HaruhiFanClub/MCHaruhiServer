@@ -38,6 +38,10 @@
         [
             "minecraft:chests/jungle_temple",
             "haruhicore:inject/minecraft/chests/jungle_temple"
+        ],
+        [
+            "minecraft:chests/nether_bridge",
+            "haruhicore:inject/minecraft/chests/nether_bridge"
         ]
     ]
 }
