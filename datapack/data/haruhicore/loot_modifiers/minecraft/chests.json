@@ -66,6 +66,10 @@
         [
             "minecraft:chests/underwater_ruin_big",
             "haruhicore:inject/minecraft/chests/underwater_ruin_big"
+        ],
+        [
+            "minecraft:chests/underwater_ruin_small",
+            "haruhicore:inject/minecraft/chests/underwater_ruin_small"
         ]
     ]
 }
