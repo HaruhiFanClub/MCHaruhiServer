@@ -2,5 +2,10 @@
     "type": "ahutils:loot_injector",
     "conditions": [],
     "strict_parameter": true,
-    "injectors": []
+    "injectors": [
+        [
+            "minecraft:gameplay/piglin_bartering",
+            "haruhicore:inject/minecraft/gameplay/piglin_bartering"
+        ]
+    ]
 }
