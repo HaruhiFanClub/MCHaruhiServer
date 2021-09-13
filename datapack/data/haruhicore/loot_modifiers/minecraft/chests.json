@@ -42,6 +42,10 @@
         [
             "minecraft:chests/nether_bridge",
             "haruhicore:inject/minecraft/chests/nether_bridge"
+        ],
+        [
+            "minecraft:chests/pillager_outpost",
+            "haruhicore:inject/minecraft/chests/pillager_outpost"
         ]
     ]
 }
