@@ -30,6 +30,10 @@
         [
             "minecraft:chests/end_city_treasure",
             "haruhicore:inject/minecraft/chests/end_city_treasure"
+        ],
+        [
+            "minecraft:chests/igloo_chest",
+            "haruhicore:inject/minecraft/chests/igloo_chest"
         ]
     ]
 }
