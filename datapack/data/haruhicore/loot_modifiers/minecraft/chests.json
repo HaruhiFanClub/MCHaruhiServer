@@ -46,6 +46,10 @@
         [
             "minecraft:chests/pillager_outpost",
             "haruhicore:inject/minecraft/chests/pillager_outpost"
+        ],
+        [
+            "minecraft:chests/ruined_portal",
+            "haruhicore:inject/minecraft/chests/ruined_portal"
         ]
     ]
 }
