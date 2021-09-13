@@ -58,6 +58,10 @@
         [
             "minecraft:chests/simple_dungeon",
             "haruhicore:inject/minecraft/chests/simple_dungeon"
+        ],
+        [
+            "minecraft:chests/stronghold_corridor",
+            "haruhicore:inject/minecraft/chests/stronghold_corridor"
         ]
     ]
 }
