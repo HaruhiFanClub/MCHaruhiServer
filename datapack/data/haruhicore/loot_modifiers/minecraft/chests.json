@@ -10,6 +10,10 @@
         [
             "minecraft:chests/bastion_hoglin_stable",
             "haruhicore:inject/minecraft/chests/bastion_hoglin_stable"
+        ],
+        [
+            "minecraft:chests/bastion_other",
+            "haruhicore:inject/minecraft/chests/bastion_other"
         ]
     ]
 }
