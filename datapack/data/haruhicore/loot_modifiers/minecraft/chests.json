@@ -70,6 +70,10 @@
         [
             "minecraft:chests/underwater_ruin_small",
             "haruhicore:inject/minecraft/chests/underwater_ruin_small"
+        ],
+        [
+            "minecraft:chests/woodland_mansion",
+            "haruhicore:inject/minecraft/chests/woodland_mansion"
         ]
     ]
 }
