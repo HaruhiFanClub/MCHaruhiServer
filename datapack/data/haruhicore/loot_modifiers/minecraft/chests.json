@@ -54,6 +54,10 @@
         [
             "minecraft:chests/shipwreck_treasure",
             "haruhicore:inject/minecraft/chests/shipwreck_treasure"
+        ],
+        [
+            "minecraft:chests/simple_dungeon",
+            "haruhicore:inject/minecraft/chests/simple_dungeon"
         ]
     ]
 }
