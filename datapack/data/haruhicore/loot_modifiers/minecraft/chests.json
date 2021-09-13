@@ -6,6 +6,10 @@
         [
             "minecraft:chests/abandoned_mineshaft",
             "haruhicore:inject/minecraft/chests/abandoned_mineshaft"
+        ],
+        [
+            "minecraft:chests/bastion_hoglin_stable",
+            "haruhicore:inject/minecraft/chests/bastion_hoglin_stable"
         ]
     ]
 }
