@@ -6,6 +6,10 @@
         [
             "minecraft:gameplay/piglin_bartering",
             "haruhicore:inject/minecraft/gameplay/piglin_bartering"
+        ],
+        [
+            "minecraft:gameplay/fishing/treasure",
+            "haruhicore:inject/minecraft/gameplay/fishing/treasure"
         ]
     ]
 }
