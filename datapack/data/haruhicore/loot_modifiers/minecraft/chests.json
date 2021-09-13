@@ -18,6 +18,10 @@
         [
             "minecraft:chests/bastion_treasure",
             "haruhicore:inject/minecraft/chests/bastion_treasure"
+        ],
+        [
+            "minecraft:chests/buried_treasure",
+            "haruhicore:inject/minecraft/chests/buried_treasure"
         ]
     ]
 }
