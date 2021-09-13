@@ -62,6 +62,10 @@
         [
             "minecraft:chests/stronghold_corridor",
             "haruhicore:inject/minecraft/chests/stronghold_corridor"
+        ],
+        [
+            "minecraft:chests/underwater_ruin_big",
+            "haruhicore:inject/minecraft/chests/underwater_ruin_big"
         ]
     ]
 }
