@@ -1,0 +1,15 @@
+{
+    "type": "ahutils:loot_injector",
+    "conditions": [],
+    "strict_parameter": true,
+    "injectors": [
+        [
+            "minecraft:gameplay/piglin_bartering",
+            "haruhicore:inject/minecraft/gameplay/piglin_bartering"
+        ],
+        [
+            "minecraft:gameplay/fishing/treasure",
+            "haruhicore:inject/minecraft/gameplay/fishing/treasure"
+        ]
+    ]
+}
