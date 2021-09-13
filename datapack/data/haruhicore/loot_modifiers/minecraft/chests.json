@@ -22,6 +22,10 @@
         [
             "minecraft:chests/buried_treasure",
             "haruhicore:inject/minecraft/chests/buried_treasure"
+        ],
+        [
+            "minecraft:chests/desert_pyramid",
+            "haruhicore:inject/minecraft/chests/desert_pyramid"
         ]
     ]
 }
