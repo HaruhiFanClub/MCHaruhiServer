@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["  G", " S ", "R  "],
+    "key": {
+        "R": {
+            "item": "haruhicore:reinforcement_stone"
+        },
+        "G": {
+            "tag": "forge:ingots/gold"
+        },
+        "S": {
+            "tag": "forge:rods/wooden"
+        }
+    },
+    "result": {
+        "item": "haruhicore:inferior_wizard_wand",
+        "count": 1
+    }
+}
