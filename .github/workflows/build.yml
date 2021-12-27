@@ -44,17 +44,16 @@ jobs:
             - name: Build server pack
               run: |
                   mkdir ${{env.SERVER_DIR}}
-                  mkdir ${{env.SERVER_DIR}}/openloader
-                  mkdir ${{env.SERVER_DIR}}/openloader/data
-                  cp -r ./datapack ${{env.SERVER_DIR}}/openloader/data/haruhiserver
+                  mkdir ${{env.SERVER_DIR}}/world
+                  mkdir ${{env.SERVER_DIR}}/world/datapacks
+                  cp -r ./datapack ${{env.SERVER_DIR}}/world/datapacks/haruhiserver
 
             - name: Build client pack
               run: |
                   mkdir ${{env.CLIENT_DIR}}
                   mkdir ${{env.CLIENT_DIR}}/overrides
-                  mkdir ${{env.CLIENT_DIR}}/overrides/openloader
-                  mkdir ${{env.CLIENT_DIR}}/overrides/openloader/resources
-                  cp -r ./resourcepack ${{env.CLIENT_DIR}}/overrides/openloader/resources/haruhiserver
+                  mkdir ${{env.CLIENT_DIR}}/overrides/resourcepacks
+                  cp -r ./resourcepack ${{env.CLIENT_DIR}}/overrides/resourcepacks/haruhiserver
                   cp ./curseforge/manifest.json ${{env.CLIENT_DIR}}/manifest.json
                   sed -i -e 's/${packname}/BasicClient/g' ${{env.CLIENT_DIR}}/manifest.json
                   sed -i -e 's/${version}/'"${{env.CI_VERSION}}"'/g' ${{env.CLIENT_DIR}}/manifest.json
