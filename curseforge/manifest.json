@@ -1,9 +1,9 @@
 {
     "minecraft": {
-        "version": "1.16.5",
+        "version": "1.18.1",
         "modLoaders": [
             {
-                "id": "forge-36.2.4",
+                "id": "forge-39.0.8",
                 "primary": true
             }
         ]
@@ -13,12 +13,6 @@
     "name": "HaruhiServer ${packname}",
     "version": "${version}",
     "author": "HaruhiFanClub",
-    "files": [
-        {
-            "projectID": 354339,
-            "fileID": 3199872,
-            "required": true
-        }
-    ],
+    "files": [],
     "overrides": "overrides"
 }
