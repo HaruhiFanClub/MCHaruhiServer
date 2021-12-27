@@ -7,9 +7,9 @@
 ![V7](https://img.shields.io/static/v1?label=五周目&message=V7&color=00aa00&style=flat-square)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/HaruhiFanClub/MCHaruhiServer/build?style=flat-square)
 &nbsp;
-![Minecraft](https://img.shields.io/static/v1?label=Minecraft&message=1.16.5&color=00aa00&style=flat-square)
-[![Forge](https://img.shields.io/static/v1?label=Forge&message=36.2.4&color=e04e14&logo=Conda-Forge&style=flat-square)](http://files.minecraftforge.net/net/minecraftforge/forge/index_1.16.5.html)
-[![AdoptOpenJDK](https://img.shields.io/static/v1?label=AdoptOpenJDK&message=16.0.2%2B7&color=brightgreen&logo=java&style=flat-square)](https://adoptopenjdk.net/?variant=openjdk16&jvmVariant=hotspot)
+![Minecraft](https://img.shields.io/static/v1?label=Minecraft&message=1.18.1&color=00aa00&style=flat-square)
+[![Forge](https://img.shields.io/static/v1?label=Forge&message=39.0.8&color=e04e14&logo=Conda-Forge&style=flat-square)](http://files.minecraftforge.net/net/minecraftforge/forge/index_1.18.1.html)
+[![AdoptiumOpenJDK](https://img.shields.io/static/v1?label=AdoptiumOpenJDK&message=17.0.1%2B12&color=brightgreen&logo=java&style=flat-square)](https://adoptium.net/?variant=openjdk17&jvmVariant=hotspot)
 &nbsp;
 [![GitHub license](https://img.shields.io/github/license/WakelessSloth56/haruhimod?style=flat-square)](/LICENSE)
 
