@@ -150,7 +150,45 @@
                 },
                 {
                     "type": "minecraft:item",
-                    "weight": 10,
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1.0,
+                                "max": 8.0,
+                                "type": "minecraft:uniform"
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Potion:\"minecraft:luck\"}"
+                        }
+                    ],
+                    "name": "minecraft:tipped_arrow"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1.0,
+                                "max": 8.0,
+                                "type": "minecraft:uniform"
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Potion:\"hstweaker:unluck\"}"
+                        }
+                    ],
+                    "name": "minecraft:tipped_arrow"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 20,
                     "functions": [
                         {
                             "function": "minecraft:enchant_randomly"
