@@ -10,9 +10,9 @@ def getEnvAsBoolean(name: str) -> bool:
 
 def getVersion() -> str:
     if getEnvAsBoolean("CI"):
-        if getEnvAsBoolean("GITHUB_ACTION"):
+        if getEnvAsBoolean("GITHUB_ACTIONS"):
             main = os.getenv("GITHUB_REF_NAME")
-            sha = os.getenv("GITHUB_SHA")[0, 7]
+            sha = os.getenv("GITHUB_SHA")[0:7]
             build = os.getenv("GITHUB_RUN_NUMBER")
             return f"{main}-rev.{sha}-build.{build}"
         else:

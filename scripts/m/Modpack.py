@@ -72,12 +72,12 @@ SESSION = requests.session()
 
 API_BASE_URL = "https://api.curseforge.com/v1/mods"
 
-HEADERS = {
-    "Accept": "application/json",
-    "x-api-key": os.getenv("CURSEFORGE_CORE_API_KEY")
-}
+key = os.getenv("CURSEFORGE_CORE_API_KEY")
+if key is None:
+    raise RuntimeError("No api key provided")
+HEADERS = {"Accept": "application/json",    "x-api-key": key}
 
-PROXY = (lambda proxy: {} if (proxy == None) else {"http": proxy, "https": proxy})(os.getenv("REQUESTS_PROXY"))
+PROXY = (lambda proxy: {} if (proxy is None) else {"http": proxy, "https": proxy})(os.getenv("REQUESTS_PROXY"))
 
 
 def resloveModInfo(mod: ModInfo):

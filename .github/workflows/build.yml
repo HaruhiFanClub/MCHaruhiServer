@@ -1,74 +1,35 @@
 name: build
 
 on:
-    # Triggers the workflow on push or pull request events but only for the v7 branch
     push:
         branches: [v7]
     pull_request:
         branches: [v7]
         types: [opened]
 
-    # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
 
 jobs:
     build:
         runs-on: ubuntu-latest
-        env:
-            BUILD_DIR: ./build
-            SERVER_DIR: ./build/server
-            CLIENT_DIR: ./build/client
 
         steps:
             - uses: actions/checkout@v2
 
-            #======#
-            # VARS #
-
-            - name: Set vars
-              run: |
-                  echo "SHORT_SHA=`echo ${GITHUB_SHA:0:7}`" >> $GITHUB_ENV
-                  echo "CI_VERSION=`echo rev.${GITHUB_SHA:0:7}-build.${{github.run_number}}`" >> $GITHUB_ENV
-
-            #=======#
-            # CLEAN #
-
-            - name: Clean build dir
-              run: |
-                  rm -rf ${{env.BUILD_DIR}}
-                  mkdir ${{env.BUILD_DIR}}
-
-            #=======#
-            # BUILD #
-
-            - name: Build server pack
-              run: |
-                  mkdir ${{env.SERVER_DIR}}
-                  mkdir ${{env.SERVER_DIR}}/world
-                  mkdir ${{env.SERVER_DIR}}/world/datapacks
-                  cp -r ./datapack ${{env.SERVER_DIR}}/world/datapacks/haruhiserver
-
-            - name: Build client pack
-              run: |
-                  mkdir ${{env.CLIENT_DIR}}
-                  mkdir ${{env.CLIENT_DIR}}/overrides
-                  mkdir ${{env.CLIENT_DIR}}/overrides/resourcepacks
-                  cp -r ./resourcepack ${{env.CLIENT_DIR}}/overrides/resourcepacks/haruhiserver
-                  cp ./curseforge/manifest.json ${{env.CLIENT_DIR}}/manifest.json
-                  sed -i -e 's/${packname}/BasicClient/g' ${{env.CLIENT_DIR}}/manifest.json
-                  sed -i -e 's/${version}/'"${{env.CI_VERSION}}"'/g' ${{env.CLIENT_DIR}}/manifest.json
-
-            #==========#
-            # ARTIFACT #
-
-            - name: Upload server pack
-              uses: actions/upload-artifact@v1
+            - uses: actions/setup-python@v4
               with:
-                  name: HaruhiServer-ServerPack-${{env.CI_VERSION}}
-                  path: ${{env.SERVER_DIR}}
+                  python-version: '3.10.6'
+                  cache: 'pip'
 
-            - name: Upload client pack
-              uses: actions/upload-artifact@v1
+            - run: pip install -r ./scripts/requirements.txt
+
+            - run: python ./scripts/build.py
+              env:
+                  CURSEFORGE_CORE_API_KEY: ${{secrets.CURSEFORGE_CORE_API_KEY}}
+
+            - run: echo "PROJECT_VERSION=`cat ./tmp/version.txt`" >> $GITHUB_ENV
+
+            - uses: actions/upload-artifact@v1
               with:
-                  name: HaruhiServer-ClientPack-${{env.CI_VERSION}}
-                  path: ${{env.CLIENT_DIR}}
+                  name: HaruhiServer-${{env.PROJECT_VERSION}}
+                  path: build
