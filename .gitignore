@@ -1,5 +1,7 @@
 .vscode
 
+tmp
 build
 run
-script
+
+__pycache__/
