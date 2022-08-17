@@ -10,9 +10,198 @@
     },
     "manifestType": "minecraftModpack",
     "manifestVersion": 1,
-    "name": "HaruhiServer ${packname}",
+    "name": "HaruhiServer Modpack",
     "version": "${version}",
     "author": "HaruhiFanClub",
-    "files": [],
-    "overrides": "overrides"
+    "overrides": "overrides",
+    "files": [
+        {
+            "projectID": 60028,
+            "fileID": 3844973
+        },
+        {
+            "projectID": 610820,
+            "fileID": 3937365
+        },
+        {
+            "projectID": 312353,
+            "fileID": 3771085
+        },
+        {
+            "projectID": 280510,
+            "fileID": 3801087
+        },
+        {
+            "projectID": 531761,
+            "fileID": 3914491
+        },
+        {
+            "projectID": 220318,
+            "fileID": 3759236
+        },
+        {
+            "projectID": 425991,
+            "fileID": 3911357
+        },
+        {
+            "projectID": 307152,
+            "fileID": 3840878
+        },
+        {
+            "projectID": 506194,
+            "fileID": 3712106
+        },
+        {
+            "projectID": 237307,
+            "fileID": 3738144
+        },
+        {
+            "projectID": 309927,
+            "fileID": 3841948
+        },
+        {
+            "projectID": 476545,
+            "fileID": 3707378
+        },
+        {
+            "projectID": 517791,
+            "fileID": 3784998
+        },
+        {
+            "projectID": 465066,
+            "fileID": 3678612
+        },
+        {
+            "projectID": 620493,
+            "fileID": 3934129
+        },
+        {
+            "projectID": 398521,
+            "fileID": 3834150
+        },
+        {
+            "projectID": 478899,
+            "fileID": 3902228
+        },
+        {
+            "projectID": 238551,
+            "fileID": 3694403
+        },
+        {
+            "projectID": 650131,
+            "fileID": 3937383
+        },
+        {
+            "projectID": 297404,
+            "fileID": 3846173
+        },
+        {
+            "projectID": 465109,
+            "fileID": 3833474
+        },
+        {
+            "projectID": 324717,
+            "fileID": 3865918
+        },
+        {
+            "projectID": 250702,
+            "fileID": 3929227
+        },
+        {
+            "projectID": 392748,
+            "fileID": 3751434
+        },
+        {
+            "projectID": 32274,
+            "fileID": 3820040
+        },
+        {
+            "projectID": 361276,
+            "fileID": 3891801
+        },
+        {
+            "projectID": 409371,
+            "fileID": 3837351
+        },
+        {
+            "projectID": 244858,
+            "fileID": 3765420
+        },
+        {
+            "projectID": 659956,
+            "fileID": 3937317
+        },
+        {
+            "projectID": 306770,
+            "fileID": 3846086
+        },
+        {
+            "projectID": 289466,
+            "fileID": 3861107
+        },
+        {
+            "projectID": 291874,
+            "fileID": 3693807
+        },
+        {
+            "projectID": 71738,
+            "fileID": 3832652
+        },
+        {
+            "projectID": 297039,
+            "fileID": 3863515
+        },
+        {
+            "projectID": 242998,
+            "fileID": 3708359
+        },
+        {
+            "projectID": 220311,
+            "fileID": 3780216
+        },
+        {
+            "projectID": 563928,
+            "fileID": 3816497
+        },
+        {
+            "projectID": 245755,
+            "fileID": 3830849
+        },
+        {
+            "projectID": 344787,
+            "fileID": 3864552
+        },
+        {
+            "projectID": 421850,
+            "fileID": 3779088
+        },
+        {
+            "projectID": 510089,
+            "fileID": 3777934
+        },
+        {
+            "projectID": 504908,
+            "fileID": 3778233
+        },
+        {
+            "projectID": 238222,
+            "fileID": 3885885
+        },
+        {
+            "projectID": 55438,
+            "fileID": 3683524
+        },
+        {
+            "projectID": 223852,
+            "fileID": 3807626
+        },
+        {
+            "projectID": 374736,
+            "fileID": 3832658
+        },
+        {
+            "projectID": 231095,
+            "fileID": 3873584
+        }
+    ]
 }
