@@ -38,7 +38,7 @@ class Modpack():
 
     def addResourcepack(self, pack: str):
         msg(f"Adding resourcespack '{self.version}' to modpack")
-        return shutil.copy(pack, utils.getDir(os.path.join(self.overrides, "resourcespack")))
+        return shutil.copy(pack, utils.getDir(os.path.join(self.overrides, "resourcespacks")))
 
     def build(self, outputDir: str) -> str:
         msg("Building modpack")
