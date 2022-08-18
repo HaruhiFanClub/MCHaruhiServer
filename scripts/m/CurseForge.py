@@ -51,6 +51,7 @@ class ModInfo(TypedDict):
 
 
 def resloveMods(mods: List[ModInfo]) -> List[ModInfo]:
+    mods.sort(key=lambda k: k["projectID"])
     p = 5
     count = len(mods)
     for gi, group in enumerate([mods[i:i+p] for i in range(0, len(mods), p)]):
@@ -91,18 +92,18 @@ def resloveModInfo(mod: ModInfo, index: str = "") -> ModInfo:
 def printModsTable(mods: List[ModInfo], output: str = None):
     tb = PrettyTable(["Index", "Required", "Project ID", "Project Slug", "Project Name", "File ID", "File Name", "File Size", "File Date", "SHA1"])
     tb.title = "Mod List"
-    for index, item in enumerate(mods):
+    for index, mod in enumerate(mods):
         tb.add_row([
             index,
-            utils.getOrElse(item, "required", True),
-            item["projectID"],
-            utils.getOrElse(item, "projectSlug"),
-            utils.getOrElse(item, "projectName"),
-            item["fileID"],
-            utils.getOrElse(item, "fileName"),
-            utils.formatSize(item["fileLength"]) if ("fileLength" in item.keys()) else "-",
-            utils.getOrElse(item, "fileDate"),
-            utils.getOrElse(item, "fileSHA1"),
+            mod.get("required", True),
+            mod["projectID"],
+            mod.get("projectSlug", "-"),
+            mod.get("projectName", "-"),
+            mod["fileID"],
+            mod.get("fileName", "-"),
+            utils.formatSize(mod["fileLength"]) if ("fileLength" in mod.keys()) else "-",
+            mod.get("fileDate", "-"),
+            mod.get("fileSHA1", "-"),
         ])
 
     if output is None:

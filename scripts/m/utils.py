@@ -75,7 +75,3 @@ def formatSize(num: int = 0):
     if level > len(units):
         level -= 1
     return f"{round(num, 2)} {units[level]}"
-
-
-def getOrElse(dict: dict, key: str, default: str = "-"):
-    return dict[key] if (key in dict.keys()) else default
