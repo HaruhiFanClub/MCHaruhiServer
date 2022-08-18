@@ -1,0 +1,16 @@
+{
+    "name": "凉宫服务器文明公约",
+    "icon": "minecraft:redstone_torch",
+    "category": "patchouli:haruhiserver/introduction",
+    "sortnum": 3,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(br)$(#ff0000)$(l)请各位玩家严格遵守服务器各项规章制度，违反者将被禁止进入服务器。$(br2)如果遇到违规行为，请第一时间制止并向管理报告。$()"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(br2)以下是需要遵守的规则：$(li)禁止恶意PVP；$(li)禁止破坏他人和公共建筑；$(li)放火烧山，牢底坐穿；$(li)禁止高频红石；$(li)禁止高空流水；$(li)禁止过高强度的跑图；$(li)减少神秘言论和迷惑行为；$(li)禁止嘲讽、谩骂、人身攻击或者阴阳怪气；$(li)禁止私刑。"
+        }
+    ]
+}

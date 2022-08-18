@@ -1,0 +1,12 @@
+{
+    "name": "工作人员介绍",
+    "icon": "minecraft:creeper_banner_pattern",
+    "category": "patchouli:haruhiserver/introduction",
+    "sortnum": 2,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "感谢以下人员对本次凉宫服务器五周目工作的支持与付出。$(br2)$(l:https://zh.moegirl.org.cn/%E5%87%89%E5%AE%AB%E6%98%A5%E6%97%A5)凉宫春日$()：超策划$(br)$(l:https://space.bilibili.com/34623519)春日しゅぎ$()：监督$(br)$(l:https://space.bilibili.com/36309238)_libellule_$()：策划$(br)$(l:https://github.com/WakelessSloth56)WakelessSloth56$()：程序$(br)$(l)Cass$()：建筑搭建$(br)$(l:https://space.bilibili.com/7938426)雲路$()：宣传美术$(br)$(l:https://space.bilibili.com/629042)电波人粒子$()：模组美术$(br)$(l)konata$()：内测$(br)$(l)Exusiai$()：客服"
+        }
+    ]
+}

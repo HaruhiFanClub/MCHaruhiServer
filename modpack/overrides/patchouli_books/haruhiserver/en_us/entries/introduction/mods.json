@@ -1,0 +1,16 @@
+{
+    "name": "服务器模组列表",
+    "icon": "minecraft:spyglass",
+    "category": "patchouli:haruhiserver/introduction",
+    "sortnum": 4,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "以下是本服务器模组（不包括客户端模组）建议前往$(l:https://www.mcmod.cn/)MCMOD$()查阅模组资料：$(li)ArnicaLib；$(li)Haruhiism；$(li)NotEnoughLuck；$(li)ExtraChampions；$(li)Aquaculture 2；$(li)Artifacts；$(li)AttributeFix；$(li)Balm；$(li)Biomes O' Plenty；$(li)Buddycards；$(li)Champions；$(li)Chisels & Bits；$(li)Cold Sweat；$(li)Cosmetic Armor Reworked；$(li)Curios API；$(li)Cursery；$(li)ExpandAbility；$(li)Display Case；"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(li)Farmer's Delight；$(li)Golden Hopper；$(li)GraveStone；$(li)InsaneLib；$(li)Lootr；$(li)MarbleGate's Exotic Enchantment:Flowing Agony；$(li)Meet Your Fight；$(li)MrCrayfish's Furniture Mod；$(li)MultiBeds；$(li)Patchouli；$(li)Progressive Bosses；$(li)Serene Seasons；$(li)ShetiPhianCore；$(li)Silent Lib；$(li)Silent Gear；$(li)Silent's Gems；$(li)Storage Drawers；$(li)TerraBlender；$(li)Waystones；$(li)XP Tome；$(li)YUNG's API；$(li)YUNG's Better Dungeons"
+        }
+    ]
+}

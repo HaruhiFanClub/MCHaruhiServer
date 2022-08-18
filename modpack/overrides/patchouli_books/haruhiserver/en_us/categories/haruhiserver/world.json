@@ -1,0 +1,6 @@
+{
+    "name": "世界",
+    "sortnum": 2,
+    "description": "本服务器共有三个世界，执行各自的功能。$(br)玩家可以通过指令或其他方式在世界之间传送。",
+    "icon": "minecraft:ender_eye"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "主城",
+    "icon": "minecraft:grass_block",
+    "category": "patchouli:haruhiserver/world",
+    "sortnum": 1,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(l)主城$()的游戏模式为$(#ffc0cb)$(l)冒险$()。$(br2)进入/离开指令：$(br)/hst world lobby enter$(br)/hst world lobby exit"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(br2)这里是每一位新玩家在第一次进入服务器时出生的地方，可以从这里前往$(l)生存世界$()或$(l)建筑世界$()。$(br)玩家在$(l)主城$()不会受到任何伤害（除非跌入虚空），所以请放心地在这里稍息。"
+        }
+    ]
+}

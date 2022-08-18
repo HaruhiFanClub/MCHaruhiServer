@@ -1,0 +1,16 @@
+{
+    "name": "建筑世界",
+    "icon": "minecraft:command_block",
+    "category": "patchouli:haruhiserver/world",
+    "sortnum": 3,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(l)建筑世界$()的游戏模式为$(9)$(l)创造$()。$(br2)进入/离开指令：$(br)/hst world building enter$(br)/hst world building exit$(br2)$(4)$(l)进入建筑世界前，请务必确认自己物品栏情况！！！$()"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(br2)在$(l)建筑世界$()，玩家们可以自由发挥想象力，创造出独属于SOS团的天地。与另外两个世界不同，$(l)建筑世界$()是$(l)半永久$()性质的，未来也不会随着周目更迭而废弃。$(br2)$(4)$(l)注意$()：从$(l)建筑世界$()离开的玩家将会：$(li)清空物品栏的所有物品;$(li)清空经验等级；$(li)清空所有状态效果。"
+        }
+    ]
+}

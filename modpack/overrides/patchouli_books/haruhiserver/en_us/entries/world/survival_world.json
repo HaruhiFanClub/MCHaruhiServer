@@ -1,0 +1,16 @@
+{
+    "name": "生存世界",
+    "icon": "minecraft:crafting_table",
+    "category": "patchouli:haruhiserver/world",
+    "sortnum": 2,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(l)生存世界$()的游戏模式为$(2)$(l)生存$()。$(br2)进入/离开：$(br)$(l)生存世界$()没有专门的进入/离开指令，从另外两个世界离开后都会回到$(l)生存世界$()。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(br2)玩家们可以在这个世界的各个维度内进行游戏（并且重铸SOS团荣光）。$(br2)$(4)$(l)注意$()：玩家在复活后，若没有绑定重生点（比如床），那么将会在$(2)$(l)主世界$()$(l)出生点$()附近128格内的随机位置复活。"
+        }
+    ]
+}
