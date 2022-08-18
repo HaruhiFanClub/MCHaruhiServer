@@ -1,5 +1,4 @@
 import os
-import shutil
 import sys
 
 from m import utils
@@ -21,8 +20,10 @@ BUILD_DIR = utils.getDir(os.path.abspath("build"))
 
 
 def buildPack(name: str):
-    print(f"Building pack: {name}")
-    return Pack(os.path.abspath(f"packs/{name}"), f"{ID}-{name}pack", VERSION).build(TEMP_DIR)
+    print(f"[Pack] Building pack: {name}")
+    zipFile = Pack(os.path.abspath(f"packs/{name}"), f"{ID}-{name}pack", VERSION).build(TEMP_DIR)
+    print(f"[Pack] Build complete: '{zipFile}'")
+    return zipFile
 
 
 if __name__ == "__main__":

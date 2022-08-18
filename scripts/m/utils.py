@@ -56,3 +56,26 @@ def copySrcToTemp(srcDir: str, tempName: str):
 def zip(srcDir: str, zipFile: str):
     os.popen(f"7z a {zipFile} {srcDir}/*").read()
     return zipFile
+
+
+def formatSize(num: int = 0):
+    units = ["B", "KiB", "MiB", "GiB", "TiB"]
+    divisor = 1024
+
+    def _fs(_num, _level, _divisor):
+        if _level >= len(units)-1:
+            return _num, _level
+        elif _num >= _divisor:
+            _num /= _divisor
+            _level += 1
+            return _fs(_num, _level, _divisor)
+        else:
+            return _num, _level
+    num, level = _fs(num, 0, divisor)
+    if level > len(units):
+        level -= 1
+    return f"{round(num, 2)} {units[level]}"
+
+
+def getOrElse(dict: dict, key: str, default: str = "-"):
+    return dict[key] if (key in dict.keys()) else default
