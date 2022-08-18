@@ -55,7 +55,7 @@ def copySrcToTemp(srcDir: str, tempName: str):
 
 
 def zip(srcDir: str, zipFile: str):
-    os.popen(f"7z a {zipFile} {srcDir}/*").read()
+    os.popen(f"7z a {zipFile} {srcDir}/* LICENSE").read()
     return zipFile
 
 
