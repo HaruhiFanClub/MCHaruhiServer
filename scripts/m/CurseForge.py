@@ -48,6 +48,7 @@ class ModInfo(TypedDict):
     fileName: Optional[str]
     fileLength: Optional[int]
     fileDate: Optional[str]
+    downloadUrl: Optional[str]
 
 
 def resloveMods(mods: List[ModInfo]) -> List[ModInfo]:

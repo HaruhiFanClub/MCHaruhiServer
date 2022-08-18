@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 import shutil
@@ -75,3 +76,11 @@ def formatSize(num: int = 0):
     if level > len(units):
         level -= 1
     return f"{round(num, 2)} {units[level]}"
+
+
+def sha1(file):
+    with open(file, "rb") as f:
+        sha1Obj = hashlib.sha1()
+        sha1Obj.update(f.read())
+        sha1 = sha1Obj.hexdigest().upper().lower()
+        return sha1
