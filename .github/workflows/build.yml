@@ -29,6 +29,18 @@ jobs:
 
             - run: echo "PROJECT_VERSION=`cat ./tmp/version.txt`" >> $GITHUB_ENV
 
+            - name: Sync artifacts
+              run: |
+                  curl ${SYNC_SCRIPT_URL} -o ./sync.sh
+                  chmod +x ./sync.sh
+                  ./sync.sh
+              env:
+                  SERVER_HOST: ${{secrets.SERVER_HOST}}
+                  SERVER_SSH_PORT: 22
+                  SERVER_SSH_USERNAME: ${{secrets.SERVER_SSH_USERNAME}}
+                  SERVER_SSH_PRIVATE_KEY: ${{secrets.SERVER_SSH_PRIVATE_KEY}}
+                  SYNC_SCRIPT_URL: ${{secrets.SYNC_SCRIPT_URL}}
+
             - uses: actions/upload-artifact@v1
               with:
                   name: HaruhiServer-${{env.PROJECT_VERSION}}
