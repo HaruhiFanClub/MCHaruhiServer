@@ -28,6 +28,6 @@ def buildPack(name: str, temp: bool = False):
 
 if __name__ == "__main__":
     buildPack("data")
-    modpack = Modpack(os.path.abspath("modpack"), "HaruhiServerModpack", VERSION)
+    modpack = Modpack(os.path.abspath("modpack"), "haruhiserver-modpack", VERSION)
     modpack.addResourcepack(buildPack("resource", True))
     modpack.build(BUILD_DIR)
