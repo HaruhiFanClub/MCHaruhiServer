@@ -1,0 +1,20 @@
+{
+    "type": "arnicalib:loot_table_injector",
+    "conditions": [
+        {
+            "condition": "arnicalib:mod_loaded",
+            "mod": "biomesoplenty"
+        }
+    ],
+    "strict_parameter": true,
+    "injectors": [
+        {
+            "target": "biomesoplenty:blocks/clover",
+            "source": "notenoughluck:blocks/grass"
+        },
+        {
+            "target": "biomesoplenty:blocks/huge_clover_petal",
+            "source": "notenoughluck:blocks/grass"
+        }
+    ]
+}
