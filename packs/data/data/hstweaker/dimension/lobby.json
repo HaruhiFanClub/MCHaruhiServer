@@ -1,0 +1,26 @@
+{
+    "type": "arnicalib:void",
+    "generator": {
+        "type": "minecraft:flat",
+        "settings": {
+            "biome": "minecraft:the_void",
+            "lakes": false,
+            "features": false,
+            "layers": [
+                {
+                    "block": "minecraft:bedrock",
+                    "height": 1
+                },
+                {
+                    "block": "minecraft:stone",
+                    "height": 58
+                },
+                {
+                    "block": "minecraft:water",
+                    "height": 64
+                }
+            ],
+            "structure_overrides": []
+        }
+    }
+}
