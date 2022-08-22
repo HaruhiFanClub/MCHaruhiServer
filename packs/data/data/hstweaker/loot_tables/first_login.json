@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:generic",
+    "pools": [
+        {
+            "rolls": 1.0,
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "patchouli:guide_book",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{\"patchouli:book\": \"patchouli:haruhiserver\"}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
