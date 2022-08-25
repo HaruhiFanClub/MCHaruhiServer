@@ -37,8 +37,8 @@ class Modpack():
         CurseForge.printModsTable(mods, os.path.join(self.temp, "modlist.txt"))
 
     def addResourcepack(self, pack: str):
-        msg(f"Adding resourcespack '{self.version}' to modpack")
-        return shutil.copy(pack, utils.getDir(os.path.join(self.overrides, "resourcespacks")))
+        msg(f"Adding resourcepack '{self.version}' to modpack")
+        return shutil.copy(pack, utils.getDir(os.path.join(self.overrides, "resourcepacks")))
 
     def build(self, outputDir: str) -> str:
         msg("Building modpack")
