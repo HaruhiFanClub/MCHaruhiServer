@@ -1,0 +1,16 @@
+{
+    "name": "指令",
+    "icon": "minecraft:light",
+    "category": "patchouli:haruhiserver/introduction",
+    "sortnum": 5,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "以下为本服务器可以使用的指令。$(br2)进入$(l)主城$()$(li)/hst world lobby enter$(br)离开$(l)主城$()$(li)/hst world lobby exit$(br)进入$(l)建筑世界$()$(li)/hst world building enter$(br)离开$(l)建筑世界$()$(li)/hst world building exit$(br)"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(br2)展示物品：$(li)此外，在输入聊天信息时，出现的第一个$(c)$(l)%i$()会被替换成当前主手的物品,鼠标悬浮上去能看到该物品的详情。"
+        }
+    ]
+}
