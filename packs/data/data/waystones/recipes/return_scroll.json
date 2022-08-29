@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [" E ", "GDG", "PPP"],
+    "key": {
+        "G": { "tag": "balm:gold_nuggets" },
+        "D": { "tag": "balm:purple_dyes" },
+        "E": { "item": "minecraft:ender_pearl" },
+        "P": { "item": "minecraft:paper" }
+    },
+    "result": {
+        "item": "waystones:return_scroll"
+    }
+}

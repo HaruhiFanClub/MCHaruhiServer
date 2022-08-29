@@ -1,0 +1,10 @@
+{
+    "type": "crafting_shaped",
+    "group": "boat",
+    "pattern": ["S S", "# #", "###"],
+    "key": {
+        "#": { "item": "biomesoplenty:palm_planks" },
+        "S": { "tag": "forge:tools/shovels" }
+    },
+    "result": { "item": "biomesoplenty:palm_boat" }
+}

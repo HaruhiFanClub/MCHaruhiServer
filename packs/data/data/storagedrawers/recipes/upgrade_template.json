@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["S/S", "/X/", "S/S"],
+    "key": {
+        "/": { "tag": "forge:rods/wooden" },
+        "S": { "tag": "minecraft:signs" },
+        "X": { "tag": "storagedrawers:drawers" }
+    },
+    "result": { "item": "storagedrawers:upgrade_template" }
+}

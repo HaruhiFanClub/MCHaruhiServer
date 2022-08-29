@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["###", "CXC", "#G#"],
+    "key": {
+        "#": { "item": "minecraft:smooth_stone" },
+        "C": { "item": "minecraft:comparator" },
+        "X": { "tag": "storagedrawers:drawers" },
+        "G": { "tag": "forge:ingots/gold" }
+    },
+    "result": { "item": "storagedrawers:controller_slave" }
+}

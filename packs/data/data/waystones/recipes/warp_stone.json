@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DED",
+    "ESE",
+    "DED"
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:nether_stars"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "D": {
+      "tag": "balm:purple_dyes"
+    }
+  },
+  "result": {
+    "item": "waystones:warp_stone"
+  }
+}

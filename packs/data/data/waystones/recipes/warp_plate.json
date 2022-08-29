@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["DFD", "DWD", "SSS"],
+    "key": {
+        "W": { "item": "waystones:warp_stone" },
+        "D": { "item": "waystones:warp_dust" },
+        "F": { "item": "minecraft:flint" },
+        "S": { "item": "minecraft:polished_andesite" }
+    },
+    "result": { "item": "waystones:warp_plate" }
+}

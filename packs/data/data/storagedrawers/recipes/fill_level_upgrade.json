@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["RTR", "/X/", "RCR"],
+    "key": {
+        "/": { "tag": "forge:rods/wooden" },
+        "C": { "item": "minecraft:comparator" },
+        "T": { "item": "minecraft:repeater" },
+        "R": { "tag": "forge:dusts/redstone" },
+        "X": { "item": "storagedrawers:upgrade_template" }
+    },
+    "result": { "item": "storagedrawers:fill_level_upgrade" }
+}
