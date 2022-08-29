@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["#/#", "/X/", "#/#"],
+    "key": {
+        "#": { "tag": "forge:storage_blocks/iron" },
+        "/": { "tag": "forge:rods/wooden" },
+        "X": { "item": "storagedrawers:obsidian_storage_upgrade" }
+    },
+    "result": { "item": "storagedrawers:iron_storage_upgrade" }
+}
