@@ -1,0 +1,10 @@
+{
+    "conditions": [{ "type": "forge:false" }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["st", "  "],
+    "key": {
+        "s": { "tag": "forge:rods/wooden" },
+        "t": { "tag": "forge:ingots/iron" }
+    },
+    "result": { "item": "chiselsandbits:chisel_iron" }
+}

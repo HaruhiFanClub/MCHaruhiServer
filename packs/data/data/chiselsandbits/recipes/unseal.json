@@ -1,0 +1,6 @@
+{
+    "conditions": [{ "type": "forge:false" }],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [{ "item": "minecraft:wet_sponge" }],
+    "result": { "item": "chiselsandbits:unseal" }
+}

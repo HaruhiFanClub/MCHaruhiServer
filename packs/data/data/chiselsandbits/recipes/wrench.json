@@ -1,0 +1,10 @@
+{
+    "conditions": [{ "type": "forge:false" }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [" pb", " pp", "p  "],
+    "key": {
+        "p": { "tag": "minecraft:planks" },
+        "b": { "item": "chiselsandbits:block_bit" }
+    },
+    "result": { "item": "chiselsandbits:wrench" }
+}

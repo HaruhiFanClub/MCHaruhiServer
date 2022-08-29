@@ -1,0 +1,11 @@
+{
+    "conditions": [{ "type": "forge:false" }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [" c ", "l l", "sss"],
+    "key": {
+        "c": { "tag": "chiselsandbits:chisel" },
+        "l": { "tag": "minecraft:logs" },
+        "s": { "item": "minecraft:smooth_stone_slab" }
+    },
+    "result": { "item": "chiselsandbits:chiseled_printer" }
+}

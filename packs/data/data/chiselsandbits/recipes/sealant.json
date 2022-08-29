@@ -1,0 +1,9 @@
+{
+    "conditions": [{ "type": "forge:false" }],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        { "tag": "forge:slimeballs" },
+        { "item": "minecraft:honey_bottle" }
+    ],
+    "result": { "item": "chiselsandbits:sealant" }
+}

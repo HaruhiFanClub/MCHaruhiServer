@@ -1,0 +1,11 @@
+{
+    "conditions": [{ "type": "forge:false" }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["cg ", "s  ", "   "],
+    "key": {
+        "c": { "tag": "chiselsandbits:chisel" },
+        "g": { "tag": "forge:glass" },
+        "s": { "tag": "forge:rods/wooden" }
+    },
+    "result": { "item": "chiselsandbits:magnifying_glass" }
+}

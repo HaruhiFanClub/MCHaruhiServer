@@ -1,0 +1,12 @@
+{
+    "conditions": [{ "type": "forge:false" }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["igi", "glg", "ici"],
+    "key": {
+        "g": { "tag": "forge:glass" },
+        "l": { "tag": "minecraft:logs" },
+        "i": { "tag": "forge:ingots/iron" },
+        "c": { "tag": "chiselsandbits:chisel" }
+    },
+    "result": { "item": "chiselsandbits:bit_storage" }
+}

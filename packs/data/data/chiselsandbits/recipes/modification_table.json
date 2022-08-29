@@ -1,0 +1,13 @@
+{
+    "conditions": [{ "type": "forge:false" }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": ["scs", "nbn", "ppp"],
+    "key": {
+        "s": { "tag": "minecraft:wooden_slabs" },
+        "n": { "tag": "forge:nuggets/iron" },
+        "b": { "tag": "minecraft:logs" },
+        "p": { "tag": "minecraft:planks" },
+        "c": { "tag": "chiselsandbits:chisel" }
+    },
+    "result": { "item": "chiselsandbits:modification_table" }
+}
