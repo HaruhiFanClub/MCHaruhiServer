@@ -5,7 +5,12 @@
             "rolls": {
                 "type": "minecraft:binomial",
                 "n": 2.0,
-                "p": 0.4
+                "p": 0.3
+            },
+            "bonus_rolls": {
+                "type": "minecraft:uniform",
+                "min": 0.05,
+                "max": 0.1
             },
             "conditions": [
                 {
@@ -35,7 +40,12 @@
             "rolls": {
                 "type": "minecraft:binomial",
                 "n": 4.0,
-                "p": 0.5
+                "p": 0.4
+            },
+            "bonus_rolls": {
+                "type": "minecraft:uniform",
+                "min": 0.05,
+                "max": 0.13
             },
             "conditions": [
                 {
@@ -65,7 +75,12 @@
             "rolls": {
                 "type": "minecraft:binomial",
                 "n": 6.0,
-                "p": 0.6
+                "p": 0.5
+            },
+            "bonus_rolls": {
+                "type": "minecraft:uniform",
+                "min": 0.05,
+                "max": 0.17
             },
             "conditions": [
                 {
@@ -95,7 +110,12 @@
             "rolls": {
                 "type": "minecraft:binomial",
                 "n": 8.0,
-                "p": 0.7
+                "p": 0.6
+            },
+            "bonus_rolls": {
+                "type": "minecraft:uniform",
+                "min": 0.05,
+                "max": 0.2
             },
             "conditions": [
                 {
@@ -125,7 +145,12 @@
             "rolls": {
                 "type": "minecraft:binomial",
                 "n": 10.0,
-                "p": 0.8
+                "p": 0.7
+            },
+            "bonus_rolls": {
+                "type": "minecraft:uniform",
+                "min": 0.05,
+                "max": 0.25
             },
             "conditions": [
                 {
@@ -154,8 +179,13 @@
             "name": "tier#1",
             "rolls": {
                 "type": "minecraft:binomial",
-                "n": 3.0,
-                "p": 0.25
+                "n": 4.0,
+                "p": 0.2
+            },
+            "bonus_rolls": {
+                "type": "minecraft:uniform",
+                "min": 0.05,
+                "max": 0.1
             },
             "conditions": [
                 {
@@ -375,7 +405,12 @@
             "rolls": {
                 "type": "minecraft:binomial",
                 "n": 5.0,
-                "p": 0.35
+                "p": 0.3
+            },
+            "bonus_rolls": {
+                "type": "minecraft:uniform",
+                "min": 0.05,
+                "max": 0.13
             },
             "conditions": [
                 {
@@ -910,8 +945,13 @@
             "name": "tier#3",
             "rolls": {
                 "type": "minecraft:binomial",
-                "n": 7.0,
-                "p": 0.45
+                "n": 6.0,
+                "p": 0.4
+            },
+            "bonus_rolls": {
+                "type": "minecraft:uniform",
+                "min": 0.05,
+                "max": 0.17
             },
             "conditions": [
                 {
@@ -1753,8 +1793,13 @@
             "name": "tier#4",
             "rolls": {
                 "type": "minecraft:binomial",
-                "n": 9.0,
-                "p": 0.55
+                "n": 7.0,
+                "p": 0.5
+            },
+            "bonus_rolls": {
+                "type": "minecraft:uniform",
+                "min": 0.05,
+                "max": 0.2
             },
             "conditions": [
                 {
@@ -2500,8 +2545,13 @@
             "name": "tier#5",
             "rolls": {
                 "type": "minecraft:binomial",
-                "n": 11.0,
-                "p": 0.65
+                "n": 8.0,
+                "p": 0.6
+            },
+            "bonus_rolls": {
+                "type": "minecraft:uniform",
+                "min": 0.05,
+                "max": 0.25
             },
             "conditions": [
                 {
