@@ -5,7 +5,7 @@
 由 凉宫春日应援团MC部 运营与维护的 Minecraft 服务器。
 
 ![V7](https://img.shields.io/static/v1?label=五周目&message=V7&color=00aa00&style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/HaruhiFanClub/MCHaruhiServer/build?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/HaruhiFanClub/MCHaruhiServer/build.yml?branch=v7&style=flat-square)
 &nbsp;
 ![Minecraft](https://img.shields.io/static/v1?label=Minecraft&message=1.18.2&color=00aa00&style=flat-square)
 [![Forge](https://img.shields.io/static/v1?label=Forge&message=40.1.73&color=e04e14&logo=Conda-Forge&style=flat-square)](http://files.minecraftforge.net/net/minecraftforge/forge/index_1.18.2.html)
